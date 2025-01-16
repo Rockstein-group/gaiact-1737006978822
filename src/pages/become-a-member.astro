@@ -1,0 +1,75 @@
+---
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import imgimages_gaiact_logo_webp from "../../public/images/gaiact_logo.webp";
+import imgimages_gaiact_leaft_icon_webp from "../../public/images/gaiact_leaft_icon.webp";
+import imgimages_gaiact_instagram_icon_webp from "../../public/images/gaiact_instagram_icon.webp";
+import imgimages_gaiact_linkedin_icon_webp from "../../public/images/gaiact_linkedin_icon.webp";
+import imgimages_gaiact_send_icon_webp from "../../public/images/gaiact_send_icon.webp";
+import imgimages_gaiact_left_footer_bg_webp from "../../public/images/gaiact-left-footer-bg.webp";
+import imgimages_gaiact_right_footer_bg_webp from "../../public/images/gaiact-right-footer-bg.webp";
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		
+        <script>
+        import { showToast } from "../components/toast";
+        (() => {
+          const els = [...document.querySelectorAll('form')];
+          if (!els?.length) return;
+          els.forEach(el => {
+            console.log("Test 1")
+            el.addEventListener('submit', async (e) => {
+              console.log("Test 2")
+              e.preventDefault();
+              const formData = new FormData(e.target);
+              const formObject = Object.fromEntries(formData);
+              formObject.emailUser = "quangnhat249@gmail.com";
+              console.log("formObject",formObject)
+              console.log("Test 3")
+              try {
+                console.log("Test 4")
+                const response = await fetch('https://app.ecobuilder.io/api/send-mail-contact', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(formObject)
+                });
+                console.log("Test 5")
+                if (!response.ok) {
+                  throw new Error('Network response was not ok');
+                }
+                console.log("Test 6")
+                const result = await response.json();
+                showToast('Form submitted successfully!');
+                console.log('Form submitted successfully:', result);
+              } catch (error) {
+                console.error('Error submitting form:', error);
+                showToast('Error submitting form', 'error');
+              }
+            });
+          });
+        })();
+      </script>
+        <Seo seo={{ title: "EcoBuilder", description: "Page description", keywords: "", canonical: "", image: '', type: "website", themeColor: "#ffffff"}} />
+		<meta charset="utf-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>Astro</title>
+	</head>
+	<body> <header class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Header&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] header-section"><section class="header-component flex flex-col overflow-hidden bg-[#102d2e] text-white" role="banner" aria-label="Header section with Gaiact branding"><div class="max-md:px-5 max-md:max-w-full px-4 py-4 sm:px-6 lg:px-8"><div class="mx-auto max-w-screen-2xl"><div class="header-component flex flex-wrap justify-between gap-10 border-b border-teal-950 bg-[#0F2D2E] font-bold"><a href="#" width="auto" height="auto" class="shrink-0" aria-label="Homepage"><Image alt="Gaiact Company Logo" src={imgimages_gaiact_logo_webp} width="400" height="300" class="w-[80px] h-[23px] lg:w-[184px] lg:h-[54px] object-cover max-w-full " loading="lazy" aria-label="Gaiact company logo" /></a><nav class="max-md:hidden my-auto hidden items-center gap-8 overflow-hidden whitespace-nowrap text-base leading-none text-white lg:flex" aria-label="Main navigation menu"><a href="/" width="auto" height="auto" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Accueil">Accueil</a><a href="/events" width="auto" height="auto" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Évènements">Évènements</a><a href="/gaiact" width="auto" height="auto" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Gaïact">Gaïact</a><a href="/media" width="auto" height="auto" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Média">Média</a><a href="/contact" width="auto" height="auto" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Contact">Contact</a></nav><div class="max-md:hidden mt-1 hidden flex-wrap items-start gap-5 self-start text-xl leading-snug lg:flex"><button width="auto" height="auto" class="max-md:px-5 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition" aria-label="Join us to be part of Gaiact">Nous rejoindre</button><button width="auto" height="auto" class="max-md:px-5 gap-2.5 self-stretch overflow-hidden rounded-xl border border-solid border-[#AEC90C] bg-[#AEC90C] bg-opacity-0 hover:bg-opacity-100 px-12 py-2.5 text-[#AEC90C] hover:text-teal-950 transition" aria-label="Become a member of Gaiact">Devenir membre</button></div><div class="flex items-center lg:hidden"></div></div></div></div></section></header><main class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Main&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] main-section"><section class="main-component flex flex-col bg-[#102d2e] relative" aria-label="Gaiact Membership Section"><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full py-16 text-white" aria-labelledby="gaiactMembershipTitle"><div class="max-w-screen-2xl mx-auto flex flex-col gap-12"><h1 class="lg:text-[50px] lg:leading-[60px] text-[28px] leading-[32px] font-bold text-center" aria-level="1">Devenez membre du réseau Gaïact</h1><div class="lg:text-xl text-sm flex flex-col gap-12"><p aria-label="Membership Description 1">Rejoignez notre réseau d&#x27;affaires éco-responsable et bénéficiez d&#x27;opportunités exclusives pour développer votre entreprise, élargir votre réseau et renforcer votre engagement en faveur du développement durable.</p><p aria-label="Membership Description 2">Ensemble, créons un avenir plus vertueux et plus responsable.</p></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><div class="rounded-2xl lg:rounded-[32px] px-5 bg-[#1e3d40]" aria-labelledby="membershipTitle-0"><div class="py-5 border-b border-lime-500"><div class="text-lime-500 font-bold lg:text-2xl text-base lg:text-left text-center">Nos événements mensuels en tarif réduit</div></div><div class="py-12 flex flex-col gap-2"><div class="flex items-center text-white gap-2"><Image alt="Leaf Icon" src={imgimages_gaiact_leaft_icon_webp} width="400" height="300" class="min-w-[28px] max-w-[28px]" /><p class="lg:text-xl text-sm">Les Soirées Immersion Gaïact en présentiel</p></div><div class="flex items-center text-white gap-2"><Image alt="Leaf Icon" src={imgimages_gaiact_leaft_icon_webp} width="400" height="300" class="min-w-[28px] max-w-[28px]" /><p class="lg:text-xl text-sm">Les Webinaires Inspiration</p></div></div></div><div class="rounded-2xl lg:rounded-[32px] px-5 bg-[#1e3d40]" aria-labelledby="membershipTitle-1"><div class="py-5 border-b border-lime-500"><div class="text-lime-500 font-bold lg:text-2xl text-base lg:text-left text-center">Nos événements mensuels en tarif réduit</div></div><div class="py-12 flex flex-col gap-2"><div class="flex items-center text-white gap-2"><Image alt="Leaf Icon" src={imgimages_gaiact_leaft_icon_webp} width="400" height="300" class="min-w-[28px] max-w-[28px]" /><p class="lg:text-xl text-sm">Notre outil collaboratif</p></div><div class="flex items-center text-white gap-2"><Image alt="Leaf Icon" src={imgimages_gaiact_leaft_icon_webp} width="400" height="300" class="min-w-[28px] max-w-[28px]" /><p class="lg:text-xl text-sm">Notre boite à outils</p></div></div></div></div><div class="text-center flex items-center flex-col lg:flex-row justify-center gap-3 mt-5 px-6 lg:px-0"><button class="inline-flex font-semibold h-10 justify-center px-6 bg-lime-500 text-teal-950 text-center py-2 border border-lime-500 rounded-xl transition-all w-full lg:w-auto" aria-label="Discover Gaïact Charter">Découvrir la charte Gaïact</button><button class="inline-flex font-semibold h-10 justify-center px-6 bg-lime-500 bg-opacity-0 hover:bg-opacity-100 hover:text-teal-950 text-lime-500 text-center py-2 border border-lime-500 rounded-xl transition-all w-full lg:w-auto" aria-label="Join the Network">Rejoindre le réseau</button></div></div></div></section></main><footer class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Footer&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] footer-section"><section class="footer-component flex flex-col overflow-hidden bg-[#112c29] text-white relative"><div class="max-md:px-5 max-md:max-w-full px-8 py-8 lg:py-12 md:py-12 sm:px-6 lg:px-8 bg-[#112c29]"><div class="mx-auto max-w-screen-2xl"><div class="flex max-w-full flex-col lg:items-center overflow-hidden"><div class="w-full max-w-[390px] md:max-w-full"><div class="items-top flex flex-col justify-between lg:gap-5 md:flex-row"><div class="items-top flex w-full flex-col md:w-[26%]"><div class="flex w-full flex-col overflow-hidden"><Image alt="Gaïact logo" src={imgimages_gaiact_logo_webp} width="400" height="300" class="w-[202px] max-w-full" loading="lazy" /></div><div class="flex min-h-[24px] w-36 max-w-full items-end gap-4 mt-10 z-30" role="group" aria-label="Social media links"><a href="#" target="_blank" width="auto" height="auto" class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300" rel="noreferrer" aria-label="Instagram"><Image alt="Instagram icon" src={imgimages_gaiact_instagram_icon_webp} width="400" height="300" class="h-full w-[24px] object-contain" loading="lazy" /></a><a href="#" target="_blank" width="auto" height="auto" class="rounded-[50%] bg-white text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300" rel="noreferrer" aria-label="LinkedIn"><Image alt="LinkedIn icon" src={imgimages_gaiact_linkedin_icon_webp} width="400" height="300" class="h-full w-[24px] object-contain p-[4px]" loading="lazy" /></a></div></div><div class="flex w-full flex-col align-top md:ml-5 md:w-[42%]"><div class="max-md:mt-4 flex grow flex-col text-base leading-loose text-white md:flex-row"><div class="flex flex-1 flex-col overflow-hidden z-30" role="navigation" aria-labelledby="footerGaiactLeftLinksTitle"><h3 width="auto" height="auto" class="sr-only">Liens</h3><a href="/" width="auto" height="auto" class="first:mt-0" role="link" aria-label="Accueil">Accueil</a><a href="/gaiact" width="auto" height="auto" class="first:mt-0" role="link" aria-label="Gaïact">Gaïact</a><a href="/contact" width="auto" height="auto" class="first:mt-0" role="link" aria-label="Contact">Contact</a><a href="/legal-notices" width="auto" height="auto" class="first:mt-0" role="link" aria-label="Mentions légales">Mentions légales</a></div><div class="flex flex-1 flex-col overflow-hidden z-30" role="navigation" aria-labelledby="footerGaiactRightLinksTitle"><h3 width="auto" height="auto" class="sr-only">Liens</h3><a href="/events" width="auto" height="auto" class="first:mt-0" role="link" aria-label="Évènements">Évènements</a><a href="/media" width="auto" height="auto" class="first:mt-0" role="link" aria-label="Média">Média</a><a href="/become-a-member" width="auto" height="auto" class="first:mt-0" role="link" aria-label="Devenir membre">Devenir membre</a></div></div></div><div class="max-md:items-start flex w-full flex-col items-center md:ml-5 md:w-[50%] md:items-end lg:items-end z-30"><div class="max-md:mt-4 flex w-full lg:max-w-[242px] flex-col items-end overflow-hidden text-white"><h2 width="auto" height="auto" class="w-full text-lg">Suivez l&#x27;actualité de Gaïact</h2><div class="mt-6 flex w-full flex-col items-end rounded-none text-sm leading-loose" aria-labelledby="footerGaiactNewsletterTitle"><div class="flex w-full items-center justify-end rounded-lg bg-[#2d4e25] align-middle pl-3"><input name="email" type="email" autoComplete="given-name" placeholder="Adresse e-mail" class="w-full items-end border-none bg-transparent text-white placeholder-white" aria-label="Adresse e-mail" required=""/><button width="auto" height="auto" class="min-w-[40px] min-h-[40px] flex items-center justify-center" cssWrap="flex items-center justify-center" type="submit" aria-label="S&#x27;inscrire à la newsletter"><Image alt="Send icon" src={imgimages_gaiact_send_icon_webp} width="17" height="17" class="w-[17px] align-middle" loading="lazy" /></button></div></div></div></div></div></div><div class="z-20 mt-10 lg:mt-16 min-h-[1px] w-full self-stretch border border-solid border-zinc-300"></div><div class="z-30 text-base pt-10 md:pt-10 lg:pt-10 text-white leading-loose lg:leading-snug"><span>© <!-- -->2024<!-- --> GAÏACT - Site web créé par la société GreenWeb. L’ensemble des données est stocké en France par</span><a href="#" width="auto" height="auto" class="underline mx-1" aria-label="Digital Forest">Digital Forest</a><span>, hébergeur éco-responsable</span></div><Image alt="Footer background left" src={imgimages_gaiact_left_footer_bg_webp} width="400" height="300" class="absolute z-0 -left-8 md:left-[30px] lg:left-[120px] h-[70px] md:h-[122px] lg:h-[198px] bottom-0 w-auto" loading="lazy" /><!-- --><Image alt="Footer background right" src={imgimages_gaiact_right_footer_bg_webp} width="400" height="300" class="absolute right-0 z-0 h-[102px] md:h-[170px] lg:h-[230px] bottom-0 top-24px w-auto" loading="lazy" /></div></div></div></section></footer> </body>
+</html>
