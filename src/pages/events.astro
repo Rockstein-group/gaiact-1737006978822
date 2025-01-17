@@ -32,7 +32,7 @@ import '../styles/global.css';
               e.preventDefault();
               const formData = new FormData(e.target);
               const formObject = Object.fromEntries(formData);
-              formObject.emailUser = "quangnhat249@gmail.com";
+              formObject.emailUser = "contact@gaiactnetwork.org";
               console.log("formObject",formObject)
               console.log("Test 3")
               try {
@@ -105,7 +105,13 @@ import '../styles/global.css';
                 <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition" aria-label="Join us to be part of Gaiact">Nous rejoindre</button>
                 <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl border border-solid border-[#AEC90C] bg-[#AEC90C] bg-opacity-0 hover:bg-opacity-100 px-12 py-2.5 text-[#AEC90C] hover:text-teal-950 transition" aria-label="Become a member of Gaiact">Devenir membre</button>
               </div>
-              <div class="flex items-center lg:hidden"></div>
+                            <div class="flex items-center lg:hidden">
+                <button class="flex items-center justify-center w-8 h-8 text-lime-500" aria-label="Open mobile menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -123,7 +129,7 @@ import '../styles/global.css';
                       <span class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]">Les Apéros réseautage Gaïact</span>
                     </span>
                   </div>
-                  <div class="lg:mt-9 lg:mr-12 lg:leading-10 leading-snug w-full lg:text-left text-center" aria-label="Meetups Description">C’est tous les 3e jeudi du mois de 18h30 à 21h (cf Calendrier) : du réseautage, une conférence avec un tryptique d’intervenant transectoriels et un buffet convivial. Les soirées sont suivies d’un after festif dans un bar partenaire.</div>
+                  <div class="lg:mt-9 lg:mr-12 lg:leading-10 leading-snug w-full lg:text-left text-center" aria-label="Meetups Description">C'est tous les 3e jeudi du mois de 18h30 à 21h (cf Calendrier) : du réseautage, une conférence avec un tryptique d'intervenant transectoriels et un buffet convivial. Les soirées sont suivies d'un after festif dans un bar partenaire.</div>
                   <div class="flex gap-3.5 items-center text-lg leading-none">
                     <Image alt="Leaf Icon" src={imgimages_gaiact_leaft_icon_webp} width="400" height="300" class="shrink-0 w-[29px]" />
                     <p class="lg:w-[677px] w-full">
@@ -131,7 +137,7 @@ import '../styles/global.css';
                       <span class="text-gray-400">10 € / Gratuit pour les membres + participation au buffet</span>
                     </p>
                   </div>
-                  <button class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-lime-500 rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto" aria-label="Register for Immersion Evening">S’inscrire à une soirée immersion</button>
+                  <button class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-lime-500 rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto" aria-label="Register for Immersion Evening">S'inscrire à une soirée immersion</button>
                 </div>
                 <div class="flex flex-col lg:ml-5 lg:w-2/5 w-full gap-8">
                   <Image alt="Gaiact Business Meetup" src={imgimages_gaiact_business_meetup_img_webp} width="400" height="300" class="w-full rounded-3xl" />
@@ -148,7 +154,7 @@ import '../styles/global.css';
                     <h3 class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]" aria-level="2">Les Webinaires des solutions Gaïact</h3>
                   </div>
                   <div class="lg:mt-10 lg:mr-14 lg:leading-10 leading-snug text-white lg:text-left text-center">Un mardi par mois, de 12h à 13h, en visioconférence thématique, avec un intervenant ayant une solution concrète.</div>
-                  <button class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-lime-500 rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto" aria-label="Register for Webinar">S’inscrire au webinaire</button>
+                  <button class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-lime-500 rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto" aria-label="Register for Webinar">S'inscrire au webinaire</button>
                 </div>
               </div>
             </div>
@@ -184,8 +190,8 @@ import '../styles/global.css';
                     </div>
                     <div class="max-md:ml-0 max-md:w-full ml-5 flex w-[71%] flex-col" aria-label="Article Text Container 1">
                       <h2 class="self-start text-xl font-bold lg:leading-none leading-snug text-white lg:block hidden" aria-label="Article Title 1">Un avant-goût immersif dans le réseau Gaïact</h2>
-                      <p class="max-md:max-w-full text-base leading-6 text-white" aria-label="Article Content 1">Il est 18h30 quand Charlotte Mader lance son brise-glace. « Quelle principale action écologique avez-vous mis en place dans votre entreprise ? », lance-t-elle à l’assemblée. La toute première soirée du réseau Gaïact est lancé. Charlotte c’est la secrétaire du réseau Gaïact qui s’occupe également de l’animation. À ses côtés se trouvent Simon Cardon, président du réseau et Océane Chabardès,...</p>
-                      <a href="#" class="max-md:px-4 inline-flex gap-2.5 overflow-hidden rounded-full border border-solid border-lime-500 bg-lime-500 text-gray-900 transition-all px-6 py-2.5 text-center max-w-screen-md:mr-auto lg:ml-auto mt-4 lg:w-auto w-1/2" aria-label="Read article 1">
+                      <p class="max-md:max-w-full text-base leading-6 text-white" aria-label="Article Content 1">Il est 18h30 quand Charlotte Mader lance son brise-glace. « Quelle principale action écologique avez-vous mis en place dans votre entreprise ? », lance-t-elle à l'assemblée. La toute première soirée du réseau Gaïact est lancé. Charlotte c'est la secrétaire du réseau Gaïact qui s'occupe également de l'animation. À ses côtés se trouvent Simon Cardon, président du réseau et Océane Chabardès,...</p>
+                      <a href="/experience-blog" class="max-md:px-4 inline-flex gap-2.5 overflow-hidden rounded-full border border-solid border-lime-500 bg-lime-500 text-gray-900 transition-all px-6 py-2.5 text-center max-w-screen-md:mr-auto lg:ml-auto mt-4 lg:w-auto w-1/2" aria-label="Read article 1">
                         <span aria-label="Read button for article 1">LIRE</span>
                         <Image alt="Chevron right icon" src={imgimages_chevron_right_dark_webp} width="400" height="300" class="w-6 h-6" />
                       </a>

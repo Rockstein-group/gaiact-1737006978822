@@ -29,7 +29,7 @@ import '../styles/global.css';
               e.preventDefault();
               const formData = new FormData(e.target);
               const formObject = Object.fromEntries(formData);
-              formObject.emailUser = "quangnhat249@gmail.com";
+              formObject.emailUser = "contact@gaiactnetwork.org";
               console.log("formObject",formObject)
               console.log("Test 3")
               try {
@@ -102,7 +102,13 @@ import '../styles/global.css';
                 <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition" aria-label="Join us to be part of Gaiact">Nous rejoindre</button>
                 <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl border border-solid border-[#AEC90C] bg-[#AEC90C] bg-opacity-0 hover:bg-opacity-100 px-12 py-2.5 text-[#AEC90C] hover:text-teal-950 transition" aria-label="Become a member of Gaiact">Devenir membre</button>
               </div>
-              <div class="flex items-center lg:hidden"></div>
+                            <div class="flex items-center lg:hidden">
+                <button class="flex items-center justify-center w-8 h-8 text-lime-500" aria-label="Open mobile menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -113,21 +119,21 @@ import '../styles/global.css';
         <div class="px-4 sm:px-6 lg:px-8 max-md:px-4 max-md:max-w-full py-16">
           <div class="2xl:max-w-[1280px] container mx-auto flex flex-col gap-10">
             <div class="flex items-center" role="navigation" aria-label="Gaïact Launch Navigation">
-              <a href="#" class="flex items-center gap-2 font-semibold text-lime-500" role="link" aria-label="Go back">
+              <a href="/media" class="flex items-center gap-2 font-semibold text-lime-500" role="link" aria-label="Go back">
                 <Image alt="Back arrow icon" src={imgimages_chevron_left_lime_webp} width="400" height="300" class="w-6 h-6" />
                 <span class="text-sm lg:text-base">Back</span>
               </a>
               <span class="bg-[#0d2425] py-1 px-10 inline-flex rounded-full text-lime-500 mx-auto text-sm lg:text-base" aria-label="Event date">date</span>
-              <a href="#" class="flex items-center gap-2 font-semibold text-lime-500 opacity-0 pointer-events-none" role="link" aria-hidden="true">
+              <a href="/media" class="flex items-center gap-2 font-semibold text-lime-500 opacity-0 pointer-events-none" role="link" aria-hidden="true">
                 <Image alt="Back arrow icon" src={imgimages_chevron_left_lime_webp} width="400" height="300" class="w-6 h-6" />
                 <span>Back</span>
               </a>
             </div>
             <div class="flex flex-col items-center" role="banner" aria-label="Gaïact Launch Header">
-              <h3 class="text-3xl font-bold text-center text-white max-md:max-w-full">Un avant-goût immersif dans le réseau Gaïact</h3>
-              <Image alt="Launch event image of the Gaïact network" src={imgimages_gaiact_launch_img_1_webp} width="1280" height="400" class="mt-16 object-contain rounded-2xl lg:rounded-[32px] w-full" />
-              <p class="mt-10 text-sm leading-loose lg:text-xl lg:leading-8 text-white max-md:max-w-full" role="contentinfo" aria-label="Launch event description part 1">Vous l'attendiez avec impatience depuis notre première soirée. C'est désormais officiel, Gaïact est devenu un réseau d'entreprise associatif ce 14 janvier 2024.</p>
-              <p class="mt-10 text-sm leading-loose lg:text-xl lg:leading-8 text-white max-md:max-w-full" role="contentinfo" aria-label="Launch event description part 2">Gaïact est un beau bébé de 425ppm, né à Annecy, de trois parents très engagés. Nous retrouvons tout d'abord le Président, Simon Cardon, serial entrepreneur et fondateur de Green web et Digital Forest. Vice-Champion du monde de BMX, sa motivation n'a d'égale que la taille de son emploi du temps. Vient ensuite la Trésorière, Océane Chabardès, journaliste et créatrice de contenus freelance. Sa culture générale, sa créativité et son réseau d'acteurs engagés (ou en transition) vous apportera des solutions concrètes. Et pour clore le trépied gagnant, laissez nous vous présenter la secrétaire du réseau, Charlotte Mader. Journaliste scientifique, animatrice RSE, Charlotte n'a qu'un objectif : décadrer votre vision de l'écologie et vous donner envie d'impulser votre propre transition. Trois acteurs engagés qui ont à cœur d'augmenter la visibilité et le maillage territorial dédiés à la transition.</p>
+              <h3 class="text-3xl font-bold text-center text-white max-md:max-w-full">C'est officiel, le réseau Gaïact est né !</h3>
+              <Image alt="Launch event image of the Gaïact network" src={imgimages_gaiact_launch_img_1_webp} width="1280" height="400" class="mt-12 object-contain rounded-2xl lg:rounded-[32px] w-full" />
+              <p class="mt-10 text-sm leading-loose lg:text-xl lg:leading-8 text-white max-md:max-w-full text-justify lg:text-center" role="contentinfo" aria-label="Launch event description part 1">Vous l'attendiez avec impatience depuis notre première soirée. C'est désormais officiel, Gaïact est devenu un réseau d'entreprise associatif ce 14 janvier 2024.</p>
+              <p class="mt-10 text-sm leading-loose lg:text-xl lg:leading-8 text-white max-md:max-w-full text-justify lg:text-center" role="contentinfo" aria-label="Launch event description part 2">Gaïact est un beau bébé de 425ppm, né à Annecy, de trois parents très engagés. Nous retrouvons tout d'abord le Président, Simon Cardon, serial entrepreneur et fondateur de Green web et Digital Forest. Vice-Champion du monde de BMX, sa motivation n'a d'égale que la taille de son emploi du temps. Vient ensuite la Trésorière, Océane Chabardès, journaliste et créatrice de contenus freelance. Sa culture générale, sa créativité et son réseau d'acteurs engagés (ou en transition) vous apportera des solutions concrètes. Et pour clore le trépied gagnant, laissez nous vous présenter la secrétaire du réseau, Charlotte Mader. Journaliste scientifique, animatrice RSE, Charlotte n'a qu'un objectif : décadrer votre vision de l'écologie et vous donner envie d'impulser votre propre transition. Trois acteurs engagés qui ont à cœur d'augmenter la visibilité et le maillage territorial dédiés à la transition.</p>
             </div>
             <div class="lg:mt-20 w-full max-md:max-w-full flex flex-col gap-10" role="main" aria-label="Gaïact Launch Main Content">
               <div class="flex lg:gap-10 lg:flex-row flex-col gap-5" aria-labelledby="gaiactLaunchText">
@@ -170,7 +176,7 @@ import '../styles/global.css';
               <p class="lg:leading-8 leading-loose" aria-label="Virtuous Circle Explanation">C'est un cercle vertueux !</p>
               <p class="lg:leading-8 leading-loose" aria-label="Membership Invitation">Alors venez impulser la transition à nos côtés en devenant membre du réseau Gaïact.</p>
               <div class="text-center" aria-labelledby="joinButton">
-                <button class="bg-lime-500 px-10 rounded-2xl text-teal-950 py-2 font-semibold lg:mt-12 lg:w-auto w-[80%] mx-auto" aria-label="Join Gaïact Button">Nous rejoindre</button>
+                <a href="/become-a-member" class="bg-lime-500 px-10 rounded-2xl text-teal-950 py-2 font-semibold lg:mt-12 lg:w-auto w-[80%] mx-auto" aria-label="Join Gaïact Button">Nous rejoindre</a>
               </div>
             </div>
           </div>

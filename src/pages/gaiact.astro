@@ -43,7 +43,7 @@ import '../styles/global.css';
               e.preventDefault();
               const formData = new FormData(e.target);
               const formObject = Object.fromEntries(formData);
-              formObject.emailUser = "quangnhat249@gmail.com";
+              formObject.emailUser = "contact@gaiactnetwork.org";
               console.log("formObject",formObject)
               console.log("Test 3")
               try {
@@ -116,7 +116,13 @@ import '../styles/global.css';
                 <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition" aria-label="Join us to be part of Gaiact">Nous rejoindre</button>
                 <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl border border-solid border-[#AEC90C] bg-[#AEC90C] bg-opacity-0 hover:bg-opacity-100 px-12 py-2.5 text-[#AEC90C] hover:text-teal-950 transition" aria-label="Become a member of Gaiact">Devenir membre</button>
               </div>
-              <div class="flex items-center lg:hidden"></div>
+                            <div class="flex items-center lg:hidden">
+                <button class="flex items-center justify-center w-8 h-8 text-lime-500" aria-label="Open mobile menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -189,13 +195,13 @@ import '../styles/global.css';
               <div class="2xl:max-w-screen-xl mx-auto text-center flex flex-col gap-4 lg:text-base text-sm">
                 <p class="text-white leading-loose" aria-label="First Call to Action Text">Prêt à faire la différence et à renforcer votre engagement en faveur du développement durable ?</p>
                 <p aria-label="Second Call to Action Text">Rejoignez notre réseau d&#x27;affaires et contribuez à un avenir soutenable et responsable aux côtés d&#x27;entreprises partageant les mêmes valeurs.</p>
-                <button class="inline-flex px-12 py-3 rounded-2xl text-gray-900 bg-lime-500 mx-auto font-semibold mt-4" aria-label="Join Button">Rejoindre</button>
+                <a href="/become-a-member" class="inline-flex px-12 py-3 rounded-2xl text-gray-900 bg-lime-500 mx-auto font-semibold mt-4" aria-label="Join Button">Rejoindre</a>
               </div>
             </div>
             <div class="2xl:max-w-[1280px] container mx-auto w-full" aria-label="Mission and Vision Section">
               <div class="2xl:max-w-screen-lg mx-auto">
                 <div class="flex flex-col lg:flex-row gap-6" aria-labelledby="missionVisionTitle">
-                  <div class="lg:w-1/2 rounded-2xl overflow-hidden px-5 bg-[#1e3d40]">
+                  <div class="lg:w-1/2 rounded-2xl overflow-hidden px-6 bg-[#1e3d40]">
                     <h3 class="text-lg py-4 border-b text-lime-500 border-b-lime-500 text-center" aria-level="3">Nos missions</h3>
                     <div class="pt-6 flex flex-col gap-6 px-8 text-center">
                       <p class="lg:text-base text-sm" aria-label="Mission statement 1">Notre mission est de rassembler et de fédérer les entreprises engagées dans le développement durable, en créant un réseau d&#x27;affaires dynamique et solidaire.</p>
@@ -204,19 +210,19 @@ import '../styles/global.css';
                     </div>
                   </div>
                   <div class="lg:w-1/2 flex flex-col gap-6">
-                    <div class="flex-1 rounded-2xl overflow-hidden px-5 bg-[#1e3d40] pb-4">
+                    <div class="flex-1 rounded-2xl overflow-hidden px-6 bg-[#1e3d40] pb-4">
                       <h3 class="text-lg py-4 border-b text-lime-500 border-b-lime-500 text-center" aria-level="3">Des valeurs fondatrices pour un impact positif</h3>
                       <div class="pt-6 flex flex-col gap-6 px-8 text-center">
                         <p class="lg:text-base text-sm" aria-label="Values statement 1">Nos valeurs guident nos actions et celles de notre réseau d&#x27;affaires.</p>
                         <p class="lg:text-base text-sm" aria-label="Values statement 2">Ensemble, nous nous engageons à promouvoir l&#x27;innovation, la collaboration et la responsabilité environnementale et sociale pour un avenir durable.</p>
                       </div>
                     </div>
-                    <div class="flex-1 rounded-2xl overflow-hidden px-5 bg-[#1e3d40] pb-4">
+                    <div class="flex-1 rounded-2xl overflow-hidden px-6 bg-[#1e3d40] pb-4">
                       <h3 class="text-lg py-4 border-b text-lime-500 border-b-lime-500 text-center" aria-level="3">Notre vision</h3>
                       <div class="pt-6 flex flex-col gap-6 px-8 text-center text-sm lg:text-base">
                         <p aria-label="Vision statement 1">Événements Immersifs</p>
                         <p aria-label="Vision statement 2">Webinaires Inspirants</p>
-                        <p aria-label="Vision statement 3">Plateforme digitale communautaire</p>
+                        <p aria-label="Vision statement 3">Plateforme digitale<br/>communautaire</p>
                       </div>
                     </div>
                   </div>
@@ -232,52 +238,52 @@ import '../styles/global.css';
                   <p class="w-full text-center lg:text-xl text-sm" aria-label="Subtitle for our members">Des entreprises engagées, impliquées et inspirantes</p>
                 </div>
                 <div class="flex lg:flex-row flex-wrap" aria-label="Logo container for our members">
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 1" src={imgimages_gaiact_about_us_logo_ck_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 2" src={imgimages_gaiact_about_us_logo_claire_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 3" src={imgimages_gaiact_about_us_logo_elan_coaching_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 4" src={imgimages_gaiact_about_us_logo_nosual_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 5" src={imgimages_gaiact_about_us_logo_eco_step_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 6" src={imgimages_gaiact_about_us_logo_phalene_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 7" src={imgimages_gaiact_about_us_logo_numi_bee_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 8" src={imgimages_gaiact_about_us_logo_cerebralis_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 9" src={imgimages_gaiact_about_us_logo_digital_forest_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>
                   </div>
-                  <div class="w-1/4 flex mx-auto mt-12 px-2 md:px-4">
+                  <div class="w-1/4 flex mx-auto mt-16 px-2 md:px-4">
                     <div class="xl:max-w-[170px] xl:min-h-[120px] m-auto flex">
                       <Image alt="Logo of member company 10" src={imgimages_gaiact_about_us_logo_green_web_webp} width="170" height="120" class="m-auto flex flex-shrink-0 object-contain w-full lg:min-w-[170px] lg:max-w-[170px]" />
                     </div>

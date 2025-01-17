@@ -25,7 +25,7 @@ import '../styles/global.css';
               e.preventDefault();
               const formData = new FormData(e.target);
               const formObject = Object.fromEntries(formData);
-              formObject.emailUser = "quangnhat249@gmail.com";
+              formObject.emailUser = "contact@gaiactnetwork.org";
               console.log("formObject",formObject)
               console.log("Test 3")
               try {
@@ -98,7 +98,13 @@ import '../styles/global.css';
                 <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition" aria-label="Join us to be part of Gaiact">Nous rejoindre</button>
                 <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl border border-solid border-[#AEC90C] bg-[#AEC90C] bg-opacity-0 hover:bg-opacity-100 px-12 py-2.5 text-[#AEC90C] hover:text-teal-950 transition" aria-label="Become a member of Gaiact">Devenir membre</button>
               </div>
-              <div class="flex items-center lg:hidden"></div>
+                            <div class="flex items-center lg:hidden">
+                <button class="flex items-center justify-center w-8 h-8 text-lime-500" aria-label="Open mobile menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
