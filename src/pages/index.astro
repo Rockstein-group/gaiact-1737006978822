@@ -19,266 +19,725 @@ import imgimages_gaiact_linkedin_icon_svg from "../../public/images/gaiact_linke
 import imgimages_gaiact_send_icon_webp from "../../public/images/gaiact_send_icon.webp";
 import imgimages_gaiact_left_footer_bg_svg from "../../public/images/gaiact-left-footer-bg.svg";
 import imgimages_gaiact_right_footer_bg_svg from "../../public/images/gaiact-right-footer-bg.svg";
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		
-        <script>
-        import { showToast } from "../components/toast";
-        (() => {
-          const els = [...document.querySelectorAll('form')];
-          if (!els?.length) return;
-          els.forEach(el => {
-            console.log("Test 1")
-            el.addEventListener('submit', async (e) => {
-              console.log("Test 2")
-              e.preventDefault();
-              const formData = new FormData(e.target);
-              const formObject = Object.fromEntries(formData);
-              formObject.emailUser = "contact@gaiactnetwork.org";
-              console.log("formObject",formObject)
-              console.log("Test 3")
-              try {
-                console.log("Test 4")
-                const response = await fetch('https://app.ecobuilder.io/api/send-mail-contact', {
-                  method: 'POST',
+  <head>
+    <script>
+      import { showToast } from "../components/toast";
+      (() => {
+        const els = [...document.querySelectorAll("form")];
+        if (!els?.length) return;
+        els.forEach((el) => {
+          console.log("Test 1");
+          el.addEventListener("submit", async (e) => {
+            console.log("Test 2");
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const formObject = Object.fromEntries(formData);
+            formObject.emailUser = "contact@gaiactnetwork.org";
+            console.log("formObject", formObject);
+            console.log("Test 3");
+            try {
+              console.log("Test 4");
+              const response = await fetch(
+                "https://app.ecobuilder.io/api/send-mail-contact",
+                {
+                  method: "POST",
                   headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json",
                   },
-                  body: JSON.stringify(formObject)
-                });
-                console.log("Test 5")
-                if (!response.ok) {
-                  throw new Error('Network response was not ok');
+                  body: JSON.stringify(formObject),
                 }
-                console.log("Test 6")
-                const result = await response.json();
-                showToast('Form submitted successfully!');
-                console.log('Form submitted successfully:', result);
-              } catch (error) {
-                console.error('Error submitting form:', error);
-                showToast('Error submitting form', 'error');
+              );
+              console.log("Test 5");
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
               }
-            });
+              console.log("Test 6");
+              const result = await response.json();
+              showToast("Form submitted successfully!");
+              console.log("Form submitted successfully:", result);
+            } catch (error) {
+              console.error("Error submitting form:", error);
+              showToast("Error submitting form", "error");
+            }
           });
-        })();
-      </script>
-       <Seo
-       seo={{ title: "Accueil - Gaïact",
-       description: "Gaïact est le premier réseau professionnel d'affaire qui vous aide à trouver votre mission sociale et environnementale, identifier vos leviers d'action concrets, vous connecter à un réseau d'acteurs engagés et oeuvrer pour le bien commun sans renoncer à vos ambitions. ",
-       keywords: "réseau professionnel, mission social, environnemental, acteur engagé",
-       canonical: "https://gaiact.org/",
-       image: 'https://gaiact.org/images/gaiact_logo.svg',
-       type: "Website",
-       themeColor: "#ffffff"}}
-       />
-		<meta charset="utf-8" />
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href="../../public/images/gaiact_fav_icon.svg"
-		/>
-		<meta
-			name="viewport"
-			content="width=device-width"
-		/>
-		<meta
-			name="generator"
-			content={Astro.generator}
-		/>
-		<title>Accueil - Gaïact</title>
-	</head>
-	<body>
-    <header class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Header&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] header-section">
-      <section class="header-component flex flex-col overflow-hidden bg-[#102d2e] text-white" role="banner" aria-label="Header section with Gaiact branding">
-        <div class="max-md:px-4 max-md:max-w-full px-4 py-4 sm:px-6 lg:px-8">
+        });
+      })();
+    </script>
+    <script>
+      // Function to toggle the navigation menu
+      function toggleSidebar() {
+        // Get the nav tag and toggle button
+        const navHeader = document.querySelector(".nav-header");
+        const navButton = document.querySelector(".nav-button");
+        const toggleButton = document.querySelector(".toggle-sidebar button");
+
+        if (navHeader && toggleButton) {
+          toggleButton.addEventListener("click", () => {
+            navHeader.classList.toggle("hidden"); // Toggle the 'hidden' class
+          });
+        }
+        if (navButton && toggleButton) {
+          toggleButton.addEventListener("click", () => {
+            navButton.classList.toggle("hidden"); // Toggle the 'hidden' class
+          });
+        }
+      }
+
+      // Call the function to attach the event listener
+      document.addEventListener("DOMContentLoaded", toggleSidebar);
+    </script>
+    <Seo
+      seo={{
+        title: "Accueil - Gaïact",
+        description:
+          "Gaïact est le premier réseau professionnel d'affaire qui vous aide à trouver votre mission sociale et environnementale, identifier vos leviers d'action concrets, vous connecter à un réseau d'acteurs engagés et oeuvrer pour le bien commun sans renoncer à vos ambitions. ",
+        keywords:
+          "réseau professionnel, mission social, environnemental, acteur engagé",
+        canonical: "https://gaiact.org/",
+        image: "https://gaiact.org/images/gaiact_logo.svg",
+        type: "Website",
+        themeColor: "#ffffff",
+      }}
+    />
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://gaiact.org/images/images/gaiact_fav_icon.svg"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Accueil - Gaïact</title>
+  </head>
+  <body>
+    <header
+      class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-['Header'] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] header-section"
+    >
+      <section
+        class="header-component flex flex-col overflow-hidden bg-[#102d2e] text-white"
+        role="banner"
+        aria-label="Header section with Gaiact branding"
+      >
+        <div class="max-md:px-4 max-md:max-w-full px-4 py-4 sm:px-5 lg:px-8">
           <div class="mx-auto 2xl:max-w-[1366px] container">
-            <div class="header-component flex flex-wrap justify-between gap-10 border-b border-teal-950 bg-[#0F2D2E] font-bold">
-              <a href="/" class="shrink-0" aria-label="Homepage">
-                <Image alt="Gaiact Company Logo" src={imgimages_gaiact_logo_svg} width="183.5" height="53" class="w-[80px] h-[23px] lg:w-[184px] lg:h-[54px] object-cover max-w-full " loading="lazy" aria-label="Gaiact company logo" />
-              </a>
-              <nav class="max-md:hidden my-auto hidden items-center gap-8 overflow-hidden whitespace-nowrap text-base leading-none text-white lg:flex" aria-label="Main navigation menu">
-                <a href="/" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Accueil">Accueil</a>
-                <a href="/events" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Évènements">Évènements</a>
-                <a href="/gaiact" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Gaïact">Gaïact</a>
-                <a href="/media" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Média">Média</a>
-                <a href="/contact" class="my-auto self-stretch hover:text-lime-500 " aria-label="Navigate to Contact">Contact</a>
-              </nav>
-              <div class="max-md:hidden mt-1 hidden flex-wrap items-start gap-5 self-start text-xl leading-snug lg:flex">
-                <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition" aria-label="Join us to be part of Gaiact">Nous rejoindre</button>
-                <button class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl border border-solid border-[#AEC90C] bg-[#AEC90C] bg-opacity-0 hover:bg-opacity-100 px-12 py-2.5 text-[#AEC90C] hover:text-teal-950 transition" aria-label="Become a member of Gaiact">Devenir membre</button>
+            <div
+              class="header-component flex flex-wrap justify-between gap-5 lg:gap-10 border-b border-teal-950 bg-[#0F2D2E] font-bold"
+            >
+              <div class="header-link flex items-center justify-between lg:w-auto w-full">
+                <a href="/" class="shrink-0" aria-label="Homepage">
+                  <Image
+                    alt="Gaiact Company Logo"
+                    src={imgimages_gaiact_logo_svg}
+                    width="183.5"
+                    height="53"
+                    class="w-[80px] h-[23px] lg:w-[184px] lg:h-[54px] object-cover max-w-full"
+                    loading="lazy"
+                    aria-label="Gaiact company logo"
+                  />
+                </a>
+                <div class="flex items-center lg:hidden toggle-sidebar">
+                  <button
+                    class="flex items-center justify-center w-8 h-8 text-lime-500"
+                    aria-label="Open mobile menu"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-8 h-8"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
-                            <div class="flex items-center lg:hidden">
-                <button class="flex items-center justify-center w-8 h-8 text-lime-500" aria-label="Open mobile menu">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 6h16M4 12h16M4 18h16"></path>
-                  </svg>
-                </button>
+              <nav
+                class="nav-header bg-[#102d2e] my-auto hidden items-center gap-8 overflow-hidden whitespace-nowrap text-base leading-none text-white lg:flex w-full lg:w-auto"
+                aria-label="Main navigation menu"
+              >
+                <a
+                  href="/"
+                  class="my-auto self-stretch hover:text-lime-500 lg:w-auto block lg:inline-block py-4 lg:py-0"
+                  aria-label="Navigate to Accueil">Accueil</a
+                >
+                <a
+                  href="/events"
+                  class="my-auto self-stretch hover:text-lime-500 lg:w-auto block lg:inline-block py-4 lg:py-0"
+                  aria-label="Navigate to Évènements">Évènements</a
+                >
+                <a
+                  href="/gaiact"
+                  class="my-auto self-stretch hover:text-lime-500 lg:w-auto block lg:inline-block py-4 lg:py-0"
+                  aria-label="Navigate to Gaïact">Gaïact</a
+                >
+                <a
+                  href="/media"
+                  class="my-auto self-stretch hover:text-lime-500 lg:w-auto block lg:inline-block py-4 lg:py-0"
+                  aria-label="Navigate to Média">Média</a
+                >
+                <a
+                  href="/contact"
+                  class="my-auto self-stretch hover:text-lime-500 lg:w-auto block lg:inline-block py-4 lg:py-0"
+                  aria-label="Navigate to Contact">Contact</a
+                >
+              </nav>
+              <div
+                class="nav-button mt-1 hidden flex-wrap items-start gap-5 self-start text-xl leading-snug lg:flex w-full lg:w-auto"
+              >
+                <button
+                  class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition w-full lg:w-auto"
+                  aria-label="Join us to be part of Gaiact"
+                  >Nous rejoindre</button
+                >
+                <button
+                  class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl border border-solid border-[#AEC90C] bg-[#AEC90C] bg-opacity-0 hover:bg-opacity-100 px-12 py-2.5 text-[#AEC90C] hover:text-teal-950 transition w-full lg:w-auto mt-4 lg:mt-0"
+                  aria-label="Become a member of Gaiact">Devenir membre</button
+                >
               </div>
             </div>
           </div>
         </div>
       </section>
     </header>
-    <main class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Main&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] main-section">
-      <section class="main-component flex overflow-hidden flex-col text-white bg-[#0F2D2E]" aria-label="Hero Gaiact Section">
-        <div class="px-4 sm:px-6 lg:px-8 max-md:px-4 max-md:max-w-full py-10 relative" aria-label="Wrapper for Hero Gaiact Section">
-          <div class="2xl:max-w-[1280px] container block lg:flex items-center mx-auto" aria-label="Container for Hero Gaiact Section">
-            <section class="flex flex-col items-start gap-10 max-w-full lg:w-[791px] max-md:w-full max-md:min-h-0 max-sm:w-full relative z-20" aria-label="Content Section of Hero Gaiact">
-              <h1 class="self-stretch lg:text-[56px] font-bold max-md:max-w-full text-[32px] leading-normal lg:leading-tight text-white" aria-label="Main heading of Hero Gaiact Section">Le réseau d&#x27;affaires pour les entreprises engagées (ou presque) dans le développement durable</h1>
-              <p class="text-white self-stretch text-2xl leading-10 max-md:max-w-full max-sm:text-xl max-sm:leading-8" aria-label="Description of Hero Gaiact Section">Connectez-vous avec des entreprises engagées, découvrez des opportunités de collaboration et boostez votre impact écologique et social.</p>
-              <button class="w-fit gap-2.5 self-stretch px-12 py-2.5 text-xl leading-snug bg-[#AEC90C] rounded-xl text-[#042f2e] max-sm:py-2 max-sm:text-lg font-semibold" aria-label="Button to join Hero Gaiact network">Nous rejoindre</button>
+    <main
+      class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-['Main'] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] main-section"
+    >
+      <section
+        class="main-component flex overflow-hidden flex-col text-white bg-[#0F2D2E]"
+        aria-label="Hero Gaiact Section"
+      >
+        <div
+          class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10 relative"
+          aria-label="Wrapper for Hero Gaiact Section"
+        >
+          <div
+            class="2xl:max-w-[1280px] container block lg:flex items-center mx-auto"
+            aria-label="Container for Hero Gaiact Section"
+          >
+            <section
+              class="flex flex-col items-start gap-10 max-w-full lg:w-[791px] max-md:w-full max-md:min-h-0 max-sm:w-full relative z-20"
+              aria-label="Content Section of Hero Gaiact"
+            >
+              <h1
+                class="self-stretch lg:text-[56px] font-bold max-md:max-w-full text-[32px] leading-normal lg:leading-tight text-white"
+                aria-label="Main heading of Hero Gaiact Section"
+              >
+                Le réseau d&#x27;affaires pour les entreprises engagées (ou
+                presque) dans le développement durable
+              </h1>
+              <p
+                class="text-white self-stretch text-2xl leading-10 max-md:max-w-full max-sm:text-xl max-sm:leading-8"
+                aria-label="Description of Hero Gaiact Section"
+              >
+                Connectez-vous avec des entreprises engagées, découvrez des
+                opportunités de collaboration et boostez votre impact écologique
+                et social.
+              </p>
+              <button
+                class="w-fit gap-2.5 self-stretch px-12 py-2.5 text-xl leading-snug bg-[#AEC90C] rounded-xl text-[#042f2e] max-sm:py-2 max-sm:text-lg font-semibold"
+                aria-label="Button to join Hero Gaiact network"
+                >Nous rejoindre</button
+              >
             </section>
-            <div class="lg:max-w-[715px] lg:min-w-[715px] lg:h-[calc(100%_-_80px)] w-full relative lg:absolute right-0 flex justify-end" aria-label="Image container for Hero Gaiact Section">
-              <Image alt="Business network illustration" src={imgimages_gaiact_hero_svg} width="665" height="507" class="lg:w-[665px] lg:h-[507px]"  aria-label="Illustration for business network" />
+            <div
+              class="lg:max-w-[715px] lg:min-w-[715px] lg:h-[calc(100%_-_80px)] w-full relative lg:absolute right-0 flex justify-end"
+              aria-label="Image container for Hero Gaiact Section"
+            >
+              <Image
+                alt="Business network illustration"
+                src={imgimages_gaiact_hero_svg}
+                width="665"
+                height="507"
+                class="w-full lg:w-[665px] lg:h-[507px]"
+                aria-label="Illustration for business network"
+              />
             </div>
           </div>
         </div>
-        <div class="main-component flex flex-col overflow-hidden bg-[#0F2D2E] text-white">
-          <div class="max-md:px-4 max-md:max-w-full px-4 lg:pt-32 sm:px-6 lg:px-8">
-            <div class="mx-auto 2xl:max-w-[1280px] container flex flex-col gap-10 lg:gap-0">
+        <div
+          class="main-component flex flex-col overflow-hidden bg-[#0F2D2E] text-white"
+        >
+          <div
+            class="max-md:px-4 max-md:max-w-full px-4 lg:pt-32 sm:px-5 lg:px-8"
+          >
+            <div
+              class="mx-auto 2xl:max-w-[1280px] container flex flex-col gap-10 lg:gap-0"
+            >
               <div class="md:pb-8 lg:pb-24">
                 <div class="mx-auto px-4">
-                  <h2 class="self-center text-2xl lg:text-[44px] lg:leading-[60px] font-bold text-center text-white max-md:max-w-full" aria-label="Hero Section Title">Rencontrez des acteurs engagés pour impulser la transition de votre business</h2>
+                  <h2
+                    class="self-center text-2xl lg:text-[44px] lg:leading-[60px] font-bold text-center text-white max-md:max-w-full"
+                    aria-label="Hero Section Title"
+                  >
+                    Rencontrez des acteurs engagés pour impulser la transition
+                    de votre business
+                  </h2>
                 </div>
               </div>
               <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <a href="https://www.helloasso.com/associations/gaiact" target="_blank" class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow" aria-labelledby="eventCardTitle">
-                  <Image alt="Default alt" src={imgimages_gaiact_event_1_webp} width="450" height="260" class="object-cover w-full" />
-                  <div class="flex flex-col gap-5 p-5 w-full flex-1 justify-between">
-                    <h4 class="mt-0" aria-label="Event Title" >Soirées de réseautage immersives</h4>
+                <a
+                  href="https://www.helloasso.com/associations/gaiact"
+                  target="_blank"
+                  class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow"
+                  aria-labelledby="eventCardTitle"
+                >
+                  <Image
+                    alt="Default alt"
+                    src={imgimages_gaiact_event_1_webp}
+                    width="450"
+                    height="260"
+                    class="object-cover w-full"
+                  />
+                  <div
+                    class="flex flex-col gap-5 p-5 w-full flex-1 justify-between"
+                  >
+                    <h4 class="mt-0" aria-label="Event Title">
+                      Soirées de réseautage immersives
+                    </h4>
                     <div class="flex gap-2.5" aria-label="Event Date">
-                      <Image alt="Date Icon" src={imgimages_gaiact_cal_logo_webp} width="24" height="24" class="object-contain shrink-0 self-stretch my-auto w-6 rounded-md aspect-square" />
-                      <p class="self-stretch my-auto rounded-none break-words font-thin">Chaque 2ème jeudi du mois</p>
+                      <Image
+                        alt="Date Icon"
+                        src={imgimages_gaiact_cal_logo_webp}
+                        width="24"
+                        height="24"
+                        class="object-contain shrink-0 self-stretch my-auto w-6 rounded-md aspect-square"
+                      />
+                      <p
+                        class="self-stretch my-auto rounded-none break-words font-thin"
+                      >
+                        Chaque 2ème jeudi du mois
+                      </p>
                     </div>
-                    <div class="flex gap-2.5 items-center" aria-label="Event Time">
-                      <Image alt="Time Icon" src={imgimages_gaiact_time_logo_webp} width="24" height="24" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
-                      <p class="self-stretch my-auto rounded-none font-thin">De 18h30 à 21h</p>
+                    <div
+                      class="flex gap-2.5 items-center"
+                      aria-label="Event Time"
+                    >
+                      <Image
+                        alt="Time Icon"
+                        src={imgimages_gaiact_time_logo_webp}
+                        width="24"
+                        height="24"
+                        class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
+                      />
+                      <p class="self-stretch my-auto rounded-none font-thin">
+                        De 18h30 à 21h
+                      </p>
                     </div>
-                    <button class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"  aria-label="Call to Action Button">Participer</button>
+                    <button
+                      class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"
+                      aria-label="Call to Action Button">Participer</button
+                    >
                   </div>
                 </a>
-                <a href="https://www.helloasso.com/associations/gaiact" target="_blank" class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow" aria-labelledby="eventCardTitle">
-                  <Image alt="Default alt" src={imgimages_gaiact_event_2_webp} width="450" height="260" class="object-cover w-full" />
-                  <div class="flex flex-col gap-5 p-5 w-full flex-1 justify-between">
+                <a
+                  href="https://www.helloasso.com/associations/gaiact"
+                  target="_blank"
+                  class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow"
+                  aria-labelledby="eventCardTitle"
+                >
+                  <Image
+                    alt="Default alt"
+                    src={imgimages_gaiact_event_2_webp}
+                    width="450"
+                    height="260"
+                    class="object-cover w-full"
+                  />
+                  <div
+                    class="flex flex-col gap-5 p-5 w-full flex-1 justify-between"
+                  >
                     <h4 class="mt-0" aria-label="Event Title">Webinaires</h4>
                     <div class="flex gap-2.5" aria-label="Event Date">
-                      <Image alt="Date Icon" src={imgimages_gaiact_cal_logo_webp} width="24" height="24" class="object-contain shrink-0 self-stretch my-auto w-6 rounded-md aspect-square" />
-                      <p class="self-stretch my-auto rounded-none break-words font-thin">Un mardi par mois</p>
+                      <Image
+                        alt="Date Icon"
+                        src={imgimages_gaiact_cal_logo_webp}
+                        width="24"
+                        height="24"
+                        class="object-contain shrink-0 self-stretch my-auto w-6 rounded-md aspect-square"
+                      />
+                      <p
+                        class="self-stretch my-auto rounded-none break-words font-thin"
+                      >
+                        Un mardi par mois
+                      </p>
                     </div>
-                    <div class="flex gap-2.5 items-center" aria-label="Event Time">
-                      <Image alt="Time Icon" src={imgimages_gaiact_time_logo_webp} width="24" height="24" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square" />
-                      <p class="self-stretch my-auto rounded-none font-thin">De 12h à 13h</p>
+                    <div
+                      class="flex gap-2.5 items-center"
+                      aria-label="Event Time"
+                    >
+                      <Image
+                        alt="Time Icon"
+                        src={imgimages_gaiact_time_logo_webp}
+                        width="24"
+                        height="24"
+                        class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
+                      />
+                      <p class="self-stretch my-auto rounded-none font-thin">
+                        De 12h à 13h
+                      </p>
                     </div>
-                    <button class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"  aria-label="Call to Action Button">S&#x27;inscrire</button>
+                    <button
+                      class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"
+                      aria-label="Call to Action Button">S&#x27;inscrire</button
+                    >
                   </div>
                 </a>
-                <a href="https://www.helloasso.com/associations/gaiact" target="_blank" class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow" aria-labelledby="eventCardTitle">
-                  <Image alt="Default alt" src={imgimages_gaiact_event_3_webp} width="450" height="260" class="object-cover w-full" />
-                  <div class="flex flex-col gap-5 p-5 w-full flex-1 justify-between">
-                    <h4 class="mt-0" aria-label="Event Title" >Plateforme digitale communautaire</h4>
-                    <button class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"  aria-label="Call to Action Button">Rejoindre</button>
+                <a
+                  href="https://www.helloasso.com/associations/gaiact"
+                  target="_blank"
+                  class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow"
+                  aria-labelledby="eventCardTitle"
+                >
+                  <Image
+                    alt="Default alt"
+                    src={imgimages_gaiact_event_3_webp}
+                    width="450"
+                    height="260"
+                    class="object-cover w-full"
+                  />
+                  <div
+                    class="flex flex-col gap-5 p-5 w-full flex-1 justify-between"
+                  >
+                    <h4 class="mt-0" aria-label="Event Title">
+                      Plateforme digitale communautaire
+                    </h4>
+                    <button
+                      class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"
+                      aria-label="Call to Action Button">Rejoindre</button
+                    >
                   </div>
                 </a>
               </div>
             </div>
           </div>
-          <section class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]" aria-labelledby="missionGaiactSectionHeading">
-            <div class="px-4 sm:px-6 lg:px-8 max-md:px-4 max-md:max-w-full pt-24 pb-0">
+          <section
+            class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
+            aria-labelledby="missionGaiactSectionHeading"
+          >
+            <div
+              class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full pt-24 pb-0"
+            >
               <div class="2xl:max-w-[1280px] container mx-auto relative">
-                <Image alt="Cloud decoration image at the top of the mission section" src={imgimages_gaiact_mission_cloud_deco_webp} width="255" height="70" class="self-end max-w-full w-[255px] ml-[50%] lg:ml-auto" aria-labelledby="missionImageTop" />
-                <div class="flex flex-col mt-7 container xl:max-w-[927px] mx-auto">
-                  <div class="flex flex-col px-14 pt-4 lg:pb-14 pb-10 w-full bg-[#245a60] border border-solid border-zinc-300 rounded-[32px] max-md:px-4">
+                <Image
+                  alt="Cloud decoration image at the top of the mission section"
+                  src={imgimages_gaiact_mission_cloud_deco_webp}
+                  width="255"
+                  height="70"
+                  class="self-end max-w-full w-[255px] ml-[50%] lg:ml-auto"
+                  aria-labelledby="missionImageTop"
+                />
+                <div
+                  class="flex flex-col mt-7 container xl:max-w-[927px] mx-auto"
+                >
+                  <div
+                    class="flex flex-col px-14 pt-4 lg:pb-14 pb-10 w-full bg-[#245a60] border border-solid border-zinc-300 rounded-[32px] max-md:px-4"
+                  >
                     <div class="flex gap-5">
-                      <div class="flex flex-col lg:w-[16%] w-auto flex-shrink-0 max-md:ml-0">
-                        <Image alt="Avatar of the person associated with the mission" src={imgimages_gaiact_mission_avatar_webp} width="120" height="120" class="object-contain shrink-0 mt-8 max-w-full rounded-full aspect-square lg:w-[120px] w-[74px] max-md:mt-10" aria-labelledby="missionAvatar" />
+                      <div
+                        class="flex flex-col lg:w-[16%] w-auto flex-shrink-0 max-md:ml-0"
+                      >
+                        <Image
+                          alt="Avatar of the person associated with the mission"
+                          src={imgimages_gaiact_mission_avatar_webp}
+                          width="120"
+                          height="120"
+                          class="object-contain shrink-0 mt-8 max-w-full rounded-full aspect-square lg:w-[120px] w-[74px] max-md:mt-10"
+                          aria-labelledby="missionAvatar"
+                        />
                       </div>
-                      <div class="flex flex-col lg:ml-5 lg:w-[84%] ml-0 w-full ">
-                        <div class="flex flex-col items-start text-2xl leading-8 text-white min-h-[123px] max-md:mt-10 max-md:max-w-full">
-                          <Image alt="Quotation mark icon for the quote" src={imgimages_gaiact_mission_quote_webp} width="71" height="54" class="w-[71px]" aria-labelledby="quoteImage" />
-                          <div class="mt-0 max-md:max-w-full text-sm lg:text-xl" >Un super moment d'échange avec des intervenants passionnants ! 😎 Hâte d'assister au prochain #ApéroGaïact.</div>
+                      <div class="flex flex-col lg:ml-5 lg:w-[84%] ml-0 w-full">
+                        <div
+                          class="flex flex-col items-start text-2xl leading-8 text-white min-h-[123px] max-md:mt-10 max-md:max-w-full"
+                        >
+                          <Image
+                            alt="Quotation mark icon for the quote"
+                            src={imgimages_gaiact_mission_quote_webp}
+                            width="71"
+                            height="54"
+                            class="w-[71px]"
+                            aria-labelledby="quoteImage"
+                          />
+                          <div
+                            class="mt-0 max-md:max-w-full text-sm lg:text-xl"
+                          >
+                            Un super moment d'échange avec des intervenants
+                            passionnants ! 😎 Hâte d'assister au prochain
+                            #ApéroGaïact.
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <p class="self-end lg:mr-40 mr-0 text-base lg:text-xl font-bold text-white " >Julien Trehin</p>
+                    <p
+                      class="self-end lg:mr-40 mr-0 text-base lg:text-xl font-bold text-white"
+                    >
+                      Julien Trehin
+                    </p>
                   </div>
                   <div class="flex gap-2.5 items-start self-center mt-7">
-                    <div class="flex shrink-0 w-3 h-3 rounded-full bg-white" aria-labelledby="dot-0"></div>
-                    <div class="flex shrink-0 w-3 h-3 rounded-full bg-cyan-800" aria-labelledby="dot-1"></div>
-                    <div class="flex shrink-0 w-3 h-3 rounded-full bg-white" aria-labelledby="dot-2"></div>
-                    <div class="flex shrink-0 w-3 h-3 rounded-full bg-white" aria-labelledby="dot-3"></div>
-                    <div class="flex shrink-0 w-3 h-3 rounded-full bg-white" aria-labelledby="dot-4"></div>
-                    <div class="flex shrink-0 w-3 h-3 rounded-full bg-white" aria-labelledby="dot-5"></div>
-                    <div class="flex shrink-0 w-3 h-3 rounded-full bg-white" aria-labelledby="dot-6"></div>
+                    <div
+                      class="flex shrink-0 w-3 h-3 rounded-full bg-white"
+                      aria-labelledby="dot-0"
+                    >
+                    </div>
+                    <div
+                      class="flex shrink-0 w-3 h-3 rounded-full bg-cyan-800"
+                      aria-labelledby="dot-1"
+                    >
+                    </div>
+                    <div
+                      class="flex shrink-0 w-3 h-3 rounded-full bg-white"
+                      aria-labelledby="dot-2"
+                    >
+                    </div>
+                    <div
+                      class="flex shrink-0 w-3 h-3 rounded-full bg-white"
+                      aria-labelledby="dot-3"
+                    >
+                    </div>
+                    <div
+                      class="flex shrink-0 w-3 h-3 rounded-full bg-white"
+                      aria-labelledby="dot-4"
+                    >
+                    </div>
+                    <div
+                      class="flex shrink-0 w-3 h-3 rounded-full bg-white"
+                      aria-labelledby="dot-5"
+                    >
+                    </div>
+                    <div
+                      class="flex shrink-0 w-3 h-3 rounded-full bg-white"
+                      aria-labelledby="dot-6"
+                    >
+                    </div>
                   </div>
                 </div>
-                <div class="lg:mt-20 mt-10 text-sm lg:text-xl leading-loose lg:leading-10 text-white w-full xl:max-w-[1083px] mx-auto">
-                  <span class="font-bold mr-0" >Rassembler et fédérer</span>
-                  <span>les entreprises engagées dans le développement durable, en créant un réseau d&#x27;affaires dynamique et solidaire. Ensemble, nous souhaitons promouvoir l&#x27;innovation, la collaboration et la responsabilité environnementale et sociale pour un avenir plus vertueux, durable et responsable.</span>
+                <div
+                  class="lg:mt-20 mt-10 text-sm lg:text-xl leading-loose lg:leading-10 text-white w-full xl:max-w-[1083px] mx-auto"
+                >
+                  <span class="font-bold mr-0">Rassembler et fédérer</span>
+                  <span
+                    >les entreprises engagées dans le développement durable, en
+                    créant un réseau d&#x27;affaires dynamique et solidaire.
+                    Ensemble, nous souhaitons promouvoir l&#x27;innovation, la
+                    collaboration et la responsabilité environnementale et
+                    sociale pour un avenir plus vertueux, durable et
+                    responsable.</span
+                  >
                 </div>
-                <Image alt="Cloud decoration image at the bottom of the mission section" src={imgimages_gaiact_mission_cloud_deco_bottom_webp} width="400" height="300" class="absolute w-[114px] right-0 bottom-12 hidden lg:block" aria-labelledby="missionImageBottom" />
-                <h4 class="mt-10 text-xl lg:text-3xl text-lime-500 w-full" >Telle est la mission Gaïact.</h4>
+                <Image
+                  alt="Cloud decoration image at the bottom of the mission section"
+                  src={imgimages_gaiact_mission_cloud_deco_bottom_webp}
+                  width="400"
+                  height="300"
+                  class="absolute w-[114px] right-0 bottom-12 hidden lg:block"
+                  aria-labelledby="missionImageBottom"
+                />
+                <h4 class="mt-10 text-xl lg:text-3xl text-lime-500 w-full">
+                  Telle est la mission Gaïact.
+                </h4>
               </div>
             </div>
-            <section class="main-component overflow-hidden flex flex-col bg-[#102d2e]" aria-labelledby="gaiactBusinessEcoHeader">
-              <div class="px-4 sm:px-6 lg:px-8 max-md:px-4 max-md:max-w-full py-16">
-                <div class="2xl:max-w-[1280px] container mx-auto flex flex-wrap flex-col-reverse lg:flex-row justify-center">
+            <section
+              class="main-component overflow-hidden flex flex-col bg-[#102d2e]"
+              aria-labelledby="gaiactBusinessEcoHeader"
+            >
+              <div
+                class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-16"
+              >
+                <div
+                  class="2xl:max-w-[1280px] container mx-auto flex flex-wrap flex-col-reverse lg:flex-row justify-center"
+                >
                   <div class="w-full lg:max-w-[510px]">
-                    <Image alt="Business Eco" src={imgimages_gaiact_business_eco_svg} width="400" height="300" class="lg:max-w-[500px] z-10 grow lg:mt-20 w-full mt-0" />
+                    <Image
+                      alt="Business Eco"
+                      src={imgimages_gaiact_business_eco_svg}
+                      width="400"
+                      height="300"
+                      class="lg:max-w-[500px] z-10 grow lg:mt-20 w-full mt-0"
+                    />
                   </div>
                   <div class="flex flex-col flex-1 xl:max-w-[714px]">
-                    <div class="flex flex-col grow gap-5 lg:-mt-2.5 text-white w-full">
-                      <p class="text-2xl lg:text-5xl w-full" aria-label="Business Eco Header">
-                        <span class="font-bold text-lime-500">Peut-on allier business</span>
-                        <span class="font-bold">et transition écologique ?</span>
+                    <div
+                      class="flex flex-col grow gap-5 lg:-mt-2.5 text-white w-full"
+                    >
+                      <p
+                        class="text-2xl lg:text-5xl w-full"
+                        aria-label="Business Eco Header"
+                      >
+                        <span class="font-bold text-lime-500"
+                          >Peut-on allier business</span
+                        >
+                        <span class="font-bold">et transition écologique ?</span
+                        >
                       </p>
-                      <p class="mt-0 ml-0 lg:ml-10 text-sm lg:text-xl font-light leading-loose lg:leading-10 max-md:mt-0 max-md:max-w-full flex flex-col items-start" aria-label="Business Eco Description" >
-                        <span>Oui ! Mais pas n'importe comment. Chez Gaïact, nous vous aidons à pérenniser votre business de manière durable en vous connectant à des clients et des partenaires engagés (ou souhaitant s'engager) dans une démarche éco-responsable.</span>
-                        <span>L'objectif est aujourd'hui de créer des modèles économiques viables grâce au réseau. Parce qu'impulser la transition de votre business, c'est le meilleur moyen d'anticiper les évolutions réglementaires, de société et surtout les aléas liés au changement climatique.</span>
-                        <br/>
+                      <p
+                        class="mt-0 ml-0 lg:ml-10 text-sm lg:text-xl font-light leading-loose lg:leading-10 max-md:mt-0 max-md:max-w-full flex flex-col items-start"
+                        aria-label="Business Eco Description"
+                      >
+                        <span
+                          >Oui ! Mais pas n'importe comment. Chez Gaïact, nous
+                          vous aidons à pérenniser votre business de manière
+                          durable en vous connectant à des clients et des
+                          partenaires engagés (ou souhaitant s'engager) dans une
+                          démarche éco-responsable.</span
+                        >
+                        <span
+                          >L'objectif est aujourd'hui de créer des modèles
+                          économiques viables grâce au réseau. Parce qu'impulser
+                          la transition de votre business, c'est le meilleur
+                          moyen d'anticiper les évolutions réglementaires, de
+                          société et surtout les aléas liés au changement
+                          climatique.</span
+                        >
+                        <br />
                         <span>
                           <span>Devenir membre, c'est </span>
-                          <span class="text-lime-500 mx-1">se connecter et collaborer avec des acteurs engagés</span>
-                          <span>, dans le but de d'assurer la pérennité de votre business sur le long terme.</span>
+                          <span class="text-lime-500 mx-1"
+                            >se connecter et collaborer avec des acteurs engagés</span
+                          >
+                          <span
+                            >, dans le but de d'assurer la pérennité de votre
+                            business sur le long terme.</span
+                          >
                         </span>
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <section class="main-component flex flex-col bg-[#255A60]" aria-labelledby="statsGaiactSectionTitle">
-                <div class="px-4 sm:px-6 lg:px-8 max-md:px-4 max-md:max-w-full py-6">
-                  <div class="2xl:max-w-[1400px] container mx-auto grid lg:grid-cols-3 grid-cols-1 gap-8 lg:gap-0">
-                    <div class="flex items-center justify-center lg:justify-start gap-6 text-white pb-8 last:pb-0 lg:pb-0 md:px-5 lg:px-10 relative" aria-labelledby="statBlock1">
-                      <h4 class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]" aria-level="4" >88%</h4>
-                      <p class="text-sm lg:text-xl" aria-describedby="statDescription1" >des consommateurs souhaitent que les entreprises s&#x27;engagent pour des causes sociales et environnementales (Cone Communications, 2017).</p>
-                      <span class="lg:h-14 lg:w-[1px] h-[1px] w-14 bg-white absolute bottom-0 lg:top-1/2 lg:right-0 transform lg:-translate-y-1/2 lg:-translate-x-1/2 " aria-hidden="true"></span>
+              <section
+                class="main-component flex flex-col bg-[#255A60]"
+                aria-labelledby="statsGaiactSectionTitle"
+              >
+                <div
+                  class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-6"
+                >
+                  <div
+                    class="2xl:max-w-[1400px] container mx-auto grid lg:grid-cols-3 grid-cols-1 gap-8 lg:gap-0"
+                  >
+                    <div
+                      class="flex items-center justify-center lg:justify-start gap-6 text-white pb-8 last:pb-0 lg:pb-0 md:px-5 lg:px-10 relative"
+                      aria-labelledby="statBlock1"
+                    >
+                      <h4
+                        class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]"
+                        aria-level="4"
+                      >
+                        88%
+                      </h4>
+                      <p
+                        class="text-sm lg:text-xl"
+                        aria-describedby="statDescription1"
+                      >
+                        des consommateurs souhaitent que les entreprises
+                        s&#x27;engagent pour des causes sociales et
+                        environnementales (Cone Communications, 2017).
+                      </p>
+                      <span
+                        class="lg:h-14 lg:w-[1px] h-[1px] w-14 bg-white absolute bottom-0 lg:top-1/2 lg:right-0 transform lg:-translate-y-1/2 lg:-translate-x-1/2"
+                        aria-hidden="true"></span>
                     </div>
-                    <div class="flex items-center justify-center lg:justify-start gap-6 text-white pb-8 last:pb-0 lg:pb-0 md:px-5 lg:px-10 relative" aria-labelledby="statBlock2">
-                      <h4 class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]" aria-level="4" >66%</h4>
-                      <p class="text-sm lg:text-xl" aria-describedby="statDescription2" >des consommateurs sont prêts à payer plus pour des produits et services provenant d&#x27;entreprises engagées dans le développement durable (Nielsen, 2015).</p>
-                      <span class="lg:h-14 lg:w-[1px] h-[1px] w-14 bg-white absolute bottom-0 lg:top-1/2 lg:right-0 transform lg:-translate-y-1/2 lg:-translate-x-1/2 " aria-hidden="true"></span>
+                    <div
+                      class="flex items-center justify-center lg:justify-start gap-6 text-white pb-8 last:pb-0 lg:pb-0 md:px-5 lg:px-10 relative"
+                      aria-labelledby="statBlock2"
+                    >
+                      <h4
+                        class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]"
+                        aria-level="4"
+                      >
+                        66%
+                      </h4>
+                      <p
+                        class="text-sm lg:text-xl"
+                        aria-describedby="statDescription2"
+                      >
+                        des consommateurs sont prêts à payer plus pour des
+                        produits et services provenant d&#x27;entreprises
+                        engagées dans le développement durable (Nielsen, 2015).
+                      </p>
+                      <span
+                        class="lg:h-14 lg:w-[1px] h-[1px] w-14 bg-white absolute bottom-0 lg:top-1/2 lg:right-0 transform lg:-translate-y-1/2 lg:-translate-x-1/2"
+                        aria-hidden="true"></span>
                     </div>
-                    <div class="flex items-center justify-center lg:justify-start gap-6 text-white pb-8 last:pb-0 lg:pb-0 md:px-5 lg:px-10 relative" aria-labelledby="statBlock3">
-                      <h4 class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]" aria-level="4" >76%</h4>
-                      <p class="text-sm lg:text-xl" aria-describedby="statDescription3" >des milléniaux considèrent la responsabilité sociale et environnementale d&#x27;une entreprise comme un facteur déterminant dans leur choix d&#x27;emploi (Cone Communications, 2016).</p>
+                    <div
+                      class="flex items-center justify-center lg:justify-start gap-6 text-white pb-8 last:pb-0 lg:pb-0 md:px-5 lg:px-10 relative"
+                      aria-labelledby="statBlock3"
+                    >
+                      <h4
+                        class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]"
+                        aria-level="4"
+                      >
+                        76%
+                      </h4>
+                      <p
+                        class="text-sm lg:text-xl"
+                        aria-describedby="statDescription3"
+                      >
+                        des milléniaux considèrent la responsabilité sociale et
+                        environnementale d&#x27;une entreprise comme un facteur
+                        déterminant dans leur choix d&#x27;emploi (Cone
+                        Communications, 2016).
+                      </p>
                     </div>
                   </div>
                 </div>
-                <section class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]" aria-labelledby="transitionGoalsTitle">
-                  <div class="px-4 sm:px-6 lg:px-8 max-md:px-4 max-md:max-w-full py-16" aria-labelledby="transitionGoalsTitle">
-                    <div class="2xl:max-w-[1280px] container mx-auto text-center flex flex-col items-center">
-                      <Image alt="Transition Goals" src={imgimages_gaiact_transition_goals_svg} width="1024" height="475" class="lg:max-w-[1023px] mx-auto w-full" />
-                      <div class="mt-16 max-md:mt-10 w-full" aria-label="Transition Goals Title">
-                        <h3 class="text-center text-2xl lg:text-[44px] lg:leading-[60px] w-full font-bold">
+                <section
+                  class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
+                  aria-labelledby="transitionGoalsTitle"
+                >
+                  <div
+                    class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-16"
+                    aria-labelledby="transitionGoalsTitle"
+                  >
+                    <div
+                      class="2xl:max-w-[1280px] container mx-auto text-center flex flex-col items-center"
+                    >
+                      <Image
+                        alt="Transition Goals"
+                        src={imgimages_gaiact_transition_goals_svg}
+                        width="1024"
+                        height="475"
+                        class="lg:max-w-[1023px] mx-auto w-full"
+                      />
+                      <div
+                        class="mt-16 max-md:mt-10 w-full"
+                        aria-label="Transition Goals Title"
+                      >
+                        <h3
+                          class="text-center text-2xl lg:text-[44px] lg:leading-[60px] w-full font-bold"
+                        >
                           Participez à la transition grâce à cdes
-                          <span class="font-bold text-lime-500">objectifs concrets</span>
+                          <span class="font-bold text-lime-500"
+                            >objectifs concrets</span
+                          >
                         </h3>
                       </div>
-                      <p class="leading-normal lg:leading-10 text-center my-10 xl:max-w-[1024px]" aria-label="Description of Transition Goals" >Vous aimeriez entamer votre transition sociale et environnementale, mais ignorez par où commencer ? Vous êtes déjà engagé mais avez besoin de renforcer votre modèle économique et de vous faire connaitre ? Vous cherchez à grandir et à changer d'échelle sans polluer ? Que vous soyez chef d'entreprise, indépendant, responsable RSE ou consultant, tout secteur confondu, n'attendez pas pour surfer sur la vague de la transition. Définissez vos objectifs, le réseau vous aide à les concrétiser.</p>
-                      <button class="inline-flex overflow-hidden px-12 py-2.5 mt-0 font-bold leading-snug whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] mx-auto max-md:mt-0" aria-label="Participate Button" >Participer</button>
+                      <p
+                        class="leading-normal lg:leading-10 text-center my-10 xl:max-w-[1024px]"
+                        aria-label="Description of Transition Goals"
+                      >
+                        Vous aimeriez entamer votre transition sociale et
+                        environnementale, mais ignorez par où commencer ? Vous
+                        êtes déjà engagé mais avez besoin de renforcer votre
+                        modèle économique et de vous faire connaitre ? Vous
+                        cherchez à grandir et à changer d'échelle sans polluer ?
+                        Que vous soyez chef d'entreprise, indépendant,
+                        responsable RSE ou consultant, tout secteur confondu,
+                        n'attendez pas pour surfer sur la vague de la
+                        transition. Définissez vos objectifs, le réseau vous
+                        aide à les concrétiser.
+                      </p>
+                      <button
+                        class="inline-flex overflow-hidden px-12 py-2.5 mt-0 font-bold leading-snug whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] mx-auto max-md:mt-0"
+                        aria-label="Participate Button">Participer</button
+                      >
                     </div>
                   </div>
                 </section>
@@ -288,51 +747,175 @@ import '../styles/global.css';
         </div>
       </section>
     </main>
-    <footer class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Footer&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] footer-section">
-      <section class="footer-component flex flex-col overflow-hidden bg-[#112c29] text-white relative">
-        <div class="max-md:px-4 max-md:max-w-full px-8 py-8 lg:py-12 md:py-12 sm:px-6 lg:px-8 bg-[#112c29]">
+    <footer
+      class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-['Footer'] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] footer-section"
+    >
+      <section
+        class="footer-component flex flex-col overflow-hidden bg-[#112c29] text-white relative"
+      >
+        <div
+          class="max-md:px-4 max-md:max-w-full px-8 py-8 lg:py-12 md:py-12 sm:px-5 lg:px-8 bg-[#112c29]"
+        >
           <div class="mx-auto 2xl:max-w-[1280px] container">
-            <div class="flex max-w-full flex-col lg:items-center overflow-hidden">
+            <div
+              class="flex max-w-full flex-col lg:items-center overflow-hidden"
+            >
               <div class="w-full max-w-[390px] md:max-w-full">
-                <div class="items-top flex flex-col justify-between lg:gap-5 md:flex-row">
+                <div
+                  class="items-top flex flex-col justify-between lg:gap-5 md:flex-row"
+                >
                   <div class="items-top flex w-full flex-col md:w-[26%]">
                     <div class="flex w-full flex-col overflow-hidden">
-                      <Image alt="Gaïact logo" src={imgimages_gaiact_logo_svg} width="201.6" height="60" class="w-[202px] max-w-full" loading="lazy" />
+                      <Image
+                        alt="Gaïact logo"
+                        src={imgimages_gaiact_logo_svg}
+                        width="201.6"
+                        height="60"
+                        class="w-[202px] max-w-full"
+                        loading="lazy"
+                      />
                     </div>
-                    <div class="flex min-h-[24px] w-36 max-w-full items-end gap-4 mt-10 z-30" role="group" aria-label="Social media links">
-                      <a href="https://www.linkedin.com/company/reseaugaiact/" target="_blank" class="rounded-[50%] bg-white text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300" rel="noreferrer" aria-label="LinkedIn">
-                        <Image alt="LinkedIn icon" src={imgimages_gaiact_linkedin_icon_svg} width="400" height="300" class="h-full w-[24px] object-contain" loading="lazy" />
+                    <div
+                      class="flex min-h-[24px] w-36 max-w-full items-end gap-4 mt-10 z-30"
+                      role="group"
+                      aria-label="Social media links"
+                    >
+                      <a
+                        href="https://www.linkedin.com/company/reseaugaiact/"
+                        target="_blank"
+                        class="rounded-[50%] bg-white text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300"
+                        rel="noreferrer"
+                        aria-label="LinkedIn"
+                      >
+                        <Image
+                          alt="LinkedIn icon"
+                          src={imgimages_gaiact_linkedin_icon_svg}
+                          width="400"
+                          height="300"
+                          class="h-full w-[24px] object-contain"
+                          loading="lazy"
+                        />
                       </a>
-                      <a href="https://www.instagram.com/reseau_gaiact/" target="_blank" class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300" rel="noreferrer" aria-label="Instagram">
-                        <Image alt="Instagram icon" src={imgimages_gaiact_instagram_icon_svg} width="400" height="300" class="h-full w-[24px] object-contain" loading="lazy" />
+                      <a
+                        href="https://www.instagram.com/reseau_gaiact/"
+                        target="_blank"
+                        class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300"
+                        rel="noreferrer"
+                        aria-label="Instagram"
+                      >
+                        <Image
+                          alt="Instagram icon"
+                          src={imgimages_gaiact_instagram_icon_svg}
+                          width="400"
+                          height="300"
+                          class="h-full w-[24px] object-contain"
+                          loading="lazy"
+                        />
                       </a>
                     </div>
                   </div>
-                  <div class="flex w-full flex-col align-top md:ml-5 md:w-[42%]">
-                    <div class="max-md:mt-4 flex grow flex-col text-base leading-loose text-white md:flex-row">
-                      <div class="flex flex-1 flex-col overflow-hidden z-30" role="navigation" aria-labelledby="footerGaiactLeftLinksTitle">
+                  <div
+                    class="flex w-full flex-col align-top md:ml-5 md:w-[42%]"
+                  >
+                    <div
+                      class="max-md:mt-4 flex grow flex-col text-base leading-loose text-white md:flex-row"
+                    >
+                      <div
+                        class="flex flex-1 flex-col overflow-hidden z-30"
+                        role="navigation"
+                        aria-labelledby="footerGaiactLeftLinksTitle"
+                      >
                         <h3 class="sr-only">Liens</h3>
-                        <a href="/" class="first:mt-0" role="link" aria-label="Accueil">Accueil</a>
-                        <a href="/gaiact" class="first:mt-0" role="link" aria-label="Gaïact">Gaïact</a>
-                        <a href="/contact" class="first:mt-0" role="link" aria-label="Contact">Contact</a>
-                        <a href="/legal-notices" class="first:mt-0" role="link" aria-label="Mentions légales">Mentions légales</a>
+                        <a
+                          href="/"
+                          class="first:mt-0"
+                          role="link"
+                          aria-label="Accueil">Accueil</a
+                        >
+                        <a
+                          href="/gaiact"
+                          class="first:mt-0"
+                          role="link"
+                          aria-label="Gaïact">Gaïact</a
+                        >
+                        <a
+                          href="/contact"
+                          class="first:mt-0"
+                          role="link"
+                          aria-label="Contact">Contact</a
+                        >
+                        <a
+                          href="/legal-notices"
+                          class="first:mt-0"
+                          role="link"
+                          aria-label="Mentions légales">Mentions légales</a
+                        >
                       </div>
-                      <div class="flex flex-1 flex-col overflow-hidden z-30" role="navigation" aria-labelledby="footerGaiactRightLinksTitle">
+                      <div
+                        class="flex flex-1 flex-col overflow-hidden z-30"
+                        role="navigation"
+                        aria-labelledby="footerGaiactRightLinksTitle"
+                      >
                         <h3 class="sr-only">Liens</h3>
-                        <a href="/events" class="first:mt-0" role="link" aria-label="Évènements">Évènements</a>
-                        <a href="/media" class="first:mt-0" role="link" aria-label="Média">Média</a>
-                        <a href="/become-a-member" class="first:mt-0" role="link" aria-label="Devenir membre">Devenir membre</a>
+                        <a
+                          href="/events"
+                          class="first:mt-0"
+                          role="link"
+                          aria-label="Évènements">Évènements</a
+                        >
+                        <a
+                          href="/media"
+                          class="first:mt-0"
+                          role="link"
+                          aria-label="Média">Média</a
+                        >
+                        <a
+                          href="/become-a-member"
+                          class="first:mt-0"
+                          role="link"
+                          aria-label="Devenir membre">Devenir membre</a
+                        >
                       </div>
                     </div>
                   </div>
-                  <div class="max-md:items-start flex w-full flex-col items-center md:ml-5 md:w-[50%] md:items-end lg:items-end z-30">
-                    <div class="max-md:mt-4 flex w-full lg:max-w-[242px] flex-col items-end overflow-hidden text-white">
-                      <h2 class="w-full text-lg">Suivez l&#x27;actualité de Gaïact</h2>
-                      <div class="mt-6 flex w-full flex-col items-end rounded-none text-sm leading-loose" aria-labelledby="footerGaiactNewsletterTitle">
-                        <div class="flex w-full items-center justify-end rounded-lg bg-[#2d4e25] align-middle pl-3">
-                          <input name="email" type="email" auto-complete="given-name" placeholder="Adresse e-mail" class="w-full items-end border-none bg-transparent text-white placeholder-white" aria-label="Adresse e-mail" required="" />
-                          <button class="min-w-[40px] min-h-[40px] flex items-center justify-center" type="submit" aria-label="S&#x27;inscrire à la newsletter">
-                            <Image alt="Send icon" src={imgimages_gaiact_send_icon_webp} width="17" height="17" class="w-[17px] align-middle" loading="lazy" />
+                  <div
+                    class="max-md:items-start flex w-full flex-col items-center md:ml-5 md:w-[50%] md:items-end lg:items-end z-30"
+                  >
+                    <div
+                      class="max-md:mt-4 flex w-full lg:max-w-[242px] flex-col items-end overflow-hidden text-white"
+                    >
+                      <h2 class="w-full text-lg">
+                        Suivez l&#x27;actualité de Gaïact
+                      </h2>
+                      <div
+                        class="mt-6 flex w-full flex-col items-end rounded-none text-sm leading-loose"
+                        aria-labelledby="footerGaiactNewsletterTitle"
+                      >
+                        <div
+                          class="flex w-full items-center justify-end rounded-lg bg-[#2d4e25] align-middle pl-3"
+                        >
+                          <input
+                            name="email"
+                            type="email"
+                            auto-complete="given-name"
+                            placeholder="Adresse e-mail"
+                            class="w-full items-end border-none bg-transparent text-white placeholder-white"
+                            aria-label="Adresse e-mail"
+                            required=""
+                          />
+                          <button
+                            class="min-w-[40px] min-h-[40px] flex items-center justify-center"
+                            type="submit"
+                            aria-label="S'inscrire à la newsletter"
+                          >
+                            <Image
+                              alt="Send icon"
+                              src={imgimages_gaiact_send_icon_webp}
+                              width="17"
+                              height="17"
+                              class="w-[17px] align-middle"
+                              loading="lazy"
+                            />
                           </button>
                         </div>
                       </div>
@@ -340,18 +923,41 @@ import '../styles/global.css';
                   </div>
                 </div>
               </div>
-              <div class="z-20 mt-10 lg:mt-16 min-h-[1px] w-full self-stretch border border-solid border-zinc-300"></div>
-              <div class="z-30 text-base pt-10 md:pt-10 lg:pt-10 text-white leading-loose lg:leading-snug">
-                <span>©
+              <div
+                class="z-20 mt-10 lg:mt-16 min-h-[1px] w-full self-stretch border border-solid border-zinc-300"
+              >
+              </div>
+              <div
+                class="z-30 text-base pt-10 md:pt-10 lg:pt-10 text-white leading-loose lg:leading-snug"
+              >
+                <span
+                  >©
                   <!-- -->2024
-                  <!-- --> GAÏACT - Site web créé par la société GreenWeb. L'ensemble des données est stocké en France par
+                  <!-- --> GAÏACT - Site web créé par la société GreenWeb. L'ensemble
+                  des données est stocké en France par
                 </span>
-                <a href="#" class="underline mx-1" aria-label="Digital Forest">Digital Forest</a>
+                <a href="#" class="underline mx-1" aria-label="Digital Forest"
+                  >Digital Forest</a
+                >
                 <span>, hébergeur éco-responsable</span>
               </div>
-              <Image alt="Footer background left" src={imgimages_gaiact_left_footer_bg_svg} width="400" height="300" class="absolute z-0 -left-8 md:left-[30px] lg:left-[120px] h-[70px] md:h-[122px] lg:h-[198px] bottom-0 w-auto" loading="lazy" />
+              <Image
+                alt="Footer background left"
+                src={imgimages_gaiact_left_footer_bg_svg}
+                width="400"
+                height="300"
+                class="absolute z-0 -left-8 md:left-[30px] lg:left-[120px] h-[70px] md:h-[122px] lg:h-[198px] bottom-0 w-auto"
+                loading="lazy"
+              />
               <!-- -->
-              <Image alt="Footer background right" src={imgimages_gaiact_right_footer_bg_svg} width="400" height="300" class="absolute right-0 z-0 h-[102px] md:h-[170px] lg:h-[230px] bottom-0 top-24px w-auto" loading="lazy" />
+              <Image
+                alt="Footer background right"
+                src={imgimages_gaiact_right_footer_bg_svg}
+                width="400"
+                height="300"
+                class="absolute right-0 z-0 h-[102px] md:h-[170px] lg:h-[230px] bottom-0 top-24px w-auto"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
