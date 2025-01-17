@@ -117,7 +117,7 @@ import "../styles/global.css";
         aria-label="Header section with Gaiact branding"
       >
         <div class="max-md:px-4 max-md:max-w-full px-4 py-4 sm:px-5 lg:px-8">
-          <div class="mx-auto 2xl:max-w-[1366px] container">
+          <div class="mx-auto 2xl:max-w-[1366px]">
             <div
               class="header-component flex flex-wrap justify-between gap-5 lg:gap-10 border-b border-teal-950 bg-[#0F2D2E] font-bold"
             >
@@ -215,7 +215,9 @@ import "../styles/global.css";
           aria-labelledby="meetupsTitle"
         >
           <div class="2xl:max-w-[1280px] container mx-auto">
-            <div class="w-full max-md:max-w-full">
+            <div class="w-full max-md:max-w-full flex flex-col gap-10">
+              <h1 class="font-bold text-center text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]">Des rencontres professionnelles pour booster votre business</h1>
+              <p class="text-lg lg:text-xl text-center lg:text-left">Participez à nos événements exclusifs pour rencontrer des professionnels engagés, échanger des idées et développer des partenariats durables. Conférences, ateliers, tables rondes et rencontres informelles : autant d'opportunités pour renforcer votre réseau d'affaires et votre impact écologique et social.</p>
               <div class="flex gap-5 max-md:flex-col">
                 <div
                   class="flex flex-col w-3/5 max-md:ml-0 max-md:w-full gap-8"
@@ -224,14 +226,10 @@ import "../styles/global.css";
                     class="flex flex-col lg:mt-2.5 w-full text-xl text-white"
                     aria-level="1"
                   >
-                    <span
-                      class="self-start text-5xl leading-6 text-cyan-900 w-full"
-                    >
-                      <span
-                        class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]"
-                        >Les Apéros réseautage Gaïact</span
-                      >
-                    </span>
+                  <span
+                  class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]"
+                  >Les Apéros réseautage Gaïact</span
+                >
                   </div>
                   <div
                     class="lg:mt-9 lg:mr-12 lg:leading-10 leading-snug w-full lg:text-left text-center"
@@ -327,7 +325,7 @@ import "../styles/global.css";
               Ne manquez pas nos prochains événements !
             </p>
             <button
-              class="inline-flex overflow-hidden px-12 py-2.5 font-bold leading-snug whitespace-nowrap bg-lime-500 rounded-3xl text-teal-950 mx-auto lg:w-auto w-[85%]"
+              class="inline-flex justify-center overflow-hidden px-12 py-2.5 font-bold leading-snug whitespace-nowrap bg-lime-500 rounded-3xl text-teal-950 mx-auto lg:w-auto w-[85%]"
               aria-label="Discover Upcoming Events">Découvrir</button
             >
           </div>
@@ -443,7 +441,7 @@ import "../styles/global.css";
                       </p>
                       <a
                         href="/experience-blog"
-                        class="max-md:px-4 inline-flex gap-2.5 overflow-hidden rounded-full border border-solid border-lime-500 bg-lime-500 text-gray-900 transition-all px-6 py-2.5 text-center max-w-screen-md:mr-auto lg:ml-auto mt-4 lg:w-auto w-1/2"
+                        class="max-md:px-4 inline-flex justify-center gap-2.5 overflow-hidden rounded-full border border-solid border-lime-500 bg-lime-500 text-gray-900 transition-all px-6 py-2.5 text-center max-w-screen-md:mr-auto lg:ml-auto mt-4 lg:w-auto w-1/2"
                         aria-label="Read article 1"
                       >
                         <span aria-label="Read button for article 1">LIRE</span>

@@ -3,6 +3,8 @@ import Seo from "../components/Seo.astro";
 import { Image } from "astro:assets";
 import imgimages_gaiact_logo_svg from "../../public/images/gaiact_logo.svg";
 import imgimages_gaiact_leaft_icon_webp from "../../public/images/gaiact_leaft_icon.webp";
+import imgimages_gaiact_left_leaft_svg from "../../public/images/gaiact_member_left_leaf.svg";
+import imgimages_gaiact_right_leaft_svg from "../../public/images/gaiact_member_right_leaf.svg";
 import imgimages_gaiact_instagram_icon_svg from "../../public/images/gaiact_instagram_icon.svg";
 import imgimages_gaiact_linkedin_icon_svg from "../../public/images/gaiact_linkedin_icon.svg";
 import imgimages_gaiact_send_icon_webp from "../../public/images/gaiact_send_icon.webp";
@@ -56,7 +58,7 @@ import "../styles/global.css";
         });
       })();
     </script>
-        <script>
+    <script>
       // Function to toggle the navigation menu
       function toggleSidebar() {
         // Get the nav tag and toggle button
@@ -111,7 +113,7 @@ import "../styles/global.css";
         aria-label="Header section with Gaiact branding"
       >
         <div class="max-md:px-4 max-md:max-w-full px-4 py-4 sm:px-5 lg:px-8">
-          <div class="mx-auto 2xl:max-w-[1366px] container">
+          <div class="mx-auto 2xl:max-w-[1366px]">
             <div
               class="header-component flex flex-wrap justify-between gap-5 lg:gap-10 border-b border-teal-950 bg-[#0F2D2E] font-bold"
             >
@@ -204,12 +206,30 @@ import "../styles/global.css";
         class="main-component flex flex-col bg-[#102d2e] relative"
         aria-label="Gaiact Membership Section"
       >
+        <div class="absolute bottom-[10%] lg:bottom-[5%] left-0">
+          <Image
+            alt="Left leaft"
+            src={imgimages_gaiact_left_leaft_svg}
+            width="180"
+            height="145"
+            class="lg:min-w-[180px] max-w-[145px] pointer-events-none"
+          />
+        </div>
+        <div class="absolute top-[21%] lg:top-[8%] right-0">
+          <Image
+            alt="Right leaft"
+            src={imgimages_gaiact_right_leaft_svg}
+            width="180"
+            height="165"
+            class="lg:min-w-[180px] lg:max-w-[165px] max-w-[90px] pointer-events-none"
+          />
+        </div>
         <div
           class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-16 text-white"
           aria-labelledby="gaiactMembershipTitle"
         >
           <div
-            class="2xl:max-w-[1280px] container mx-auto flex flex-col gap-12"
+            class="xl:max-w-[1140px] container mx-auto flex flex-col gap-12"
           >
             <h1
               class="lg:text-[50px] lg:leading-[60px] text-[28px] leading-[32px] font-bold text-center"
@@ -301,7 +321,7 @@ import "../styles/global.css";
               </div>
             </div>
             <div
-              class="text-center flex items-center flex-col lg:flex-row justify-center gap-3 mt-5 px-6 lg:px-0"
+              class="text-center flex items-center flex-col lg:flex-row justify-center gap-3 mt-5 px-6 lg:px-0 relative z-50"
             >
               <button
                 class="inline-flex font-semibold h-10 justify-center px-6 bg-lime-500 text-teal-950 text-center py-2 border border-lime-500 rounded-xl transition-all w-full lg:w-auto"
@@ -309,7 +329,7 @@ import "../styles/global.css";
                 >Découvrir la charte Gaïact</button
               >
               <button
-                class="inline-flex font-semibold h-10 justify-center px-6 bg-lime-500 bg-opacity-0 hover:bg-opacity-100 hover:text-teal-950 text-lime-500 text-center py-2 border border-lime-500 rounded-xl transition-all w-full lg:w-auto"
+                class="inline-flex font-semibold h-10 justify-center px-6  hover:bg-opacity-100 hover:text-[#102d2e] hover:bg-lime-500 text-lime-500 text-center py-2 border border-lime-500 rounded-xl transition-all w-full lg:w-auto bg-[#102d2e]"
                 aria-label="Join the Network">Rejoindre le réseau</button
               >
             </div>

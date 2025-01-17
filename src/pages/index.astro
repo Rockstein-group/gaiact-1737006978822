@@ -3,6 +3,8 @@ import Seo from "../components/Seo.astro";
 import { Image } from "astro:assets";
 import imgimages_gaiact_logo_svg from "../../public/images/gaiact_logo.svg";
 import imgimages_gaiact_hero_svg from "../../public/images/gaiact_hero.svg";
+import imgimages_gaiact_hero_2_svg from "../../public/images/gaiact_hero_2.svg";
+import imgimages_gaiact_bush_svg from "../../public/images/gaiact_bush.svg";
 import imgimages_gaiact_event_1_webp from "../../public/images/gaiact_event_1.webp";
 import imgimages_gaiact_cal_logo_webp from "../../public/images/gaiact_cal_logo.webp";
 import imgimages_gaiact_time_logo_webp from "../../public/images/gaiact_time_logo.webp";
@@ -123,11 +125,13 @@ import "../styles/global.css";
         aria-label="Header section with Gaiact branding"
       >
         <div class="max-md:px-4 max-md:max-w-full px-4 py-4 sm:px-5 lg:px-8">
-          <div class="mx-auto 2xl:max-w-[1366px] container">
+          <div class="mx-auto 2xl:max-w-[1366px]">
             <div
               class="header-component flex flex-wrap justify-between gap-5 lg:gap-10 border-b border-teal-950 bg-[#0F2D2E] font-bold"
             >
-              <div class="header-link flex items-center justify-between lg:w-auto w-full">
+              <div
+                class="header-link flex items-center justify-between lg:w-auto w-full"
+              >
                 <a href="/" class="shrink-0" aria-label="Homepage">
                   <Image
                     alt="Gaiact Company Logo"
@@ -214,8 +218,18 @@ import "../styles/global.css";
         class="main-component flex overflow-hidden flex-col text-white bg-[#0F2D2E]"
         aria-label="Hero Gaiact Section"
       >
+        <div class="absolute top-0 lg:top-10 right-0 z-0 lg:z-50">
+          <Image
+            alt="Business network illustration"
+            src={imgimages_gaiact_bush_svg}
+            width="401"
+            height="203"
+            class="md:w-[401px] md:h-[203px] w-[235px] h-[122px]"
+            aria-label="Illustration for business network"
+          />
+        </div>
         <div
-          class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10 relative"
+          class="max-md:max-w-full py-10 relative"
           aria-label="Wrapper for Hero Gaiact Section"
         >
           <div
@@ -223,18 +237,17 @@ import "../styles/global.css";
             aria-label="Container for Hero Gaiact Section"
           >
             <section
-              class="flex flex-col items-start gap-10 max-w-full lg:w-[791px] max-md:w-full max-md:min-h-0 max-sm:w-full relative z-20"
+              class="flex flex-col items-start gap-[76px] max-w-full lg:w-[911px] max-md:w-full max-md:min-h-0 max-sm:w-full relative z-20 px-4 sm:px-5 md:px-0"
               aria-label="Content Section of Hero Gaiact"
             >
               <h1
-                class="self-stretch lg:text-[56px] font-bold max-md:max-w-full text-[32px] leading-normal lg:leading-tight text-white"
+                class="self-stretch lg:text-[44px] lg:leading-[51px] font-bold max-md:max-w-full text-[32px] leading-normal lg:leading-tight text-white"
                 aria-label="Main heading of Hero Gaiact Section"
               >
-                Le réseau d&#x27;affaires pour les entreprises engagées (ou
-                presque) dans le développement durable
+              Le réseau d'affaires pour les entreprises engagées (ou presque) dans le développement durable 
               </h1>
               <p
-                class="text-white self-stretch text-2xl leading-10 max-md:max-w-full max-sm:text-xl max-sm:leading-8"
+                class="text-white self-stretch text-2xl leading-10 lg:max-w-[619px] max-md:max-w-full max-sm:text-xl max-sm:leading-8"
                 aria-label="Description of Hero Gaiact Section"
               >
                 Connectez-vous avec des entreprises engagées, découvrez des
@@ -253,10 +266,10 @@ import "../styles/global.css";
             >
               <Image
                 alt="Business network illustration"
-                src={imgimages_gaiact_hero_svg}
+                src={imgimages_gaiact_hero_2_svg}
                 width="665"
-                height="507"
-                class="w-full lg:w-[665px] lg:h-[507px]"
+                height="400"
+                class="w-full lg:w-[665px] lg:h-[400px] md:mt-[90px] lg:relative lg:left-10"
                 aria-label="Illustration for business network"
               />
             </div>
@@ -693,7 +706,7 @@ import "../styles/global.css";
                   aria-labelledby="transitionGoalsTitle"
                 >
                   <div
-                    class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-16"
+                    class="max-md:max-w-full py-16"
                     aria-labelledby="transitionGoalsTitle"
                   >
                     <div
@@ -707,7 +720,7 @@ import "../styles/global.css";
                         class="lg:max-w-[1023px] mx-auto w-full"
                       />
                       <div
-                        class="mt-16 max-md:mt-10 w-full"
+                        class="mt-16 max-md:mt-10 w-full px-4 sm:px-5 md:px-0"
                         aria-label="Transition Goals Title"
                       >
                         <h3
@@ -718,26 +731,26 @@ import "../styles/global.css";
                             >objectifs concrets</span
                           >
                         </h3>
+                        <p
+                          class="leading-normal lg:leading-10 text-center my-10 xl:max-w-[1024px]"
+                          aria-label="Description of Transition Goals"
+                        >
+                          Vous aimeriez entamer votre transition sociale et
+                          environnementale, mais ignorez par où commencer ? Vous
+                          êtes déjà engagé mais avez besoin de renforcer votre
+                          modèle économique et de vous faire connaitre ? Vous
+                          cherchez à grandir et à changer d'échelle sans polluer
+                          ? Que vous soyez chef d'entreprise, indépendant,
+                          responsable RSE ou consultant, tout secteur confondu,
+                          n'attendez pas pour surfer sur la vague de la
+                          transition. Définissez vos objectifs, le réseau vous
+                          aide à les concrétiser.
+                        </p>
+                        <button
+                          class="inline-flex overflow-hidden px-12 py-2.5 mt-0 font-bold leading-snug whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] mx-auto max-md:mt-0"
+                          aria-label="Participate Button">Participer</button
+                        >
                       </div>
-                      <p
-                        class="leading-normal lg:leading-10 text-center my-10 xl:max-w-[1024px]"
-                        aria-label="Description of Transition Goals"
-                      >
-                        Vous aimeriez entamer votre transition sociale et
-                        environnementale, mais ignorez par où commencer ? Vous
-                        êtes déjà engagé mais avez besoin de renforcer votre
-                        modèle économique et de vous faire connaitre ? Vous
-                        cherchez à grandir et à changer d'échelle sans polluer ?
-                        Que vous soyez chef d'entreprise, indépendant,
-                        responsable RSE ou consultant, tout secteur confondu,
-                        n'attendez pas pour surfer sur la vague de la
-                        transition. Définissez vos objectifs, le réseau vous
-                        aide à les concrétiser.
-                      </p>
-                      <button
-                        class="inline-flex overflow-hidden px-12 py-2.5 mt-0 font-bold leading-snug whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] mx-auto max-md:mt-0"
-                        aria-label="Participate Button">Participer</button
-                      >
                     </div>
                   </div>
                 </section>
