@@ -299,7 +299,7 @@ import "../styles/global.css";
                   href="https://www.helloasso.com/associations/gaiact"
                   target="_blank"
                   class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow"
-                  aria-labelledby="eventCardTitle"
+                  aria-labelledby="eventCardTitle1"
                 >
                   <Image
                     alt="Default alt"
@@ -311,7 +311,11 @@ import "../styles/global.css";
                   <div
                     class="flex flex-col gap-5 p-5 w-full flex-1 justify-between"
                   >
-                    <h3 class="mt-0" aria-label="Event Title">
+                    <h3
+                      id="eventCardTitle1"
+                      class="mt-0"
+                      aria-label="Event Title"
+                    >
                       Soirées de réseautage immersives
                     </h3>
                     <div class="flex gap-2.5" aria-label="Event Date">
@@ -345,15 +349,18 @@ import "../styles/global.css";
                     </div>
                     <button
                       class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"
-                      aria-label="Call to Action Button">Participer</button
+                      aria-label="Call to Action Button"
                     >
+                      Participer
+                    </button>
                   </div>
                 </a>
+
                 <a
                   href="https://www.helloasso.com/associations/gaiact"
                   target="_blank"
                   class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow"
-                  aria-labelledby="eventCardTitle"
+                  aria-labelledby="eventCardTitle2"
                 >
                   <Image
                     alt="Default alt"
@@ -365,7 +372,13 @@ import "../styles/global.css";
                   <div
                     class="flex flex-col gap-5 p-5 w-full flex-1 justify-between"
                   >
-                    <h3 class="mt-0" aria-label="Event Title">Webinaires</h3>
+                    <h3
+                      id="eventCardTitle2"
+                      class="mt-0"
+                      aria-label="Event Title"
+                    >
+                      Webinaires
+                    </h3>
                     <div class="flex gap-2.5" aria-label="Event Date">
                       <Image
                         alt="Date Icon"
@@ -397,15 +410,18 @@ import "../styles/global.css";
                     </div>
                     <button
                       class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"
-                      aria-label="Call to Action Button">S&#x27;inscrire</button
+                      aria-label="Call to Action Button"
                     >
+                      S'inscrire
+                    </button>
                   </div>
                 </a>
+
                 <a
                   href="https://www.helloasso.com/associations/gaiact"
                   target="_blank"
                   class="flex overflow-hidden flex-col items-start mx-auto w-full text-xl font-bold text-white border-2 hover:border-lime-500 border-solid bg-zinc-600 bg-opacity-30 rounded-[32px] lg:mt-7 flex-grow"
-                  aria-labelledby="eventCardTitle"
+                  aria-labelledby="eventCardTitle3"
                 >
                   <Image
                     alt="Default alt"
@@ -417,13 +433,19 @@ import "../styles/global.css";
                   <div
                     class="flex flex-col gap-5 p-5 w-full flex-1 justify-between"
                   >
-                    <h3 class="mt-0" aria-label="Event Title">
+                    <h3
+                      id="eventCardTitle3"
+                      class="mt-0"
+                      aria-label="Event Title"
+                    >
                       Plateforme digitale communautaire
                     </h3>
                     <button
                       class="px-16 py-4 leading-none text-center whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] max-md:px-4 w-full"
-                      aria-label="Call to Action Button">Rejoindre</button
+                      aria-label="Call to Action Button"
                     >
+                      Rejoindre
+                    </button>
                   </div>
                 </a>
               </div>
@@ -433,6 +455,9 @@ import "../styles/global.css";
             class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
             aria-labelledby="missionGaiactSectionHeading"
           >
+            <h2 id="missionGaiactSectionHeading" class="sr-only">
+              Mission Gaïact
+            </h2>
             <div
               class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full pt-12 lg:pt-32 pb-0"
             >
@@ -445,6 +470,9 @@ import "../styles/global.css";
                   class="self-end max-w-full w-[255px] ml-[50%] lg:ml-auto"
                   aria-labelledby="missionImageTop"
                 />
+                <span id="missionImageTop" class="sr-only"
+                  >Mission Image Top</span
+                >
                 <div
                   class="flex flex-col mt-7 container xl:max-w-[927px] mx-auto"
                 >
@@ -463,6 +491,9 @@ import "../styles/global.css";
                           class="object-contain shrink-0 mt-8 max-w-full rounded-full aspect-square lg:w-[120px] w-[74px] max-md:mt-10"
                           aria-labelledby="missionAvatar"
                         />
+                        <span id="missionAvatar" class="sr-only"
+                          >Mission Avatar</span
+                        >
                       </div>
                       <div class="flex flex-col lg:ml-5 lg:w-[84%] ml-0 w-full">
                         <div
@@ -476,6 +507,9 @@ import "../styles/global.css";
                             class="w-[71px]"
                             aria-labelledby="quoteImage"
                           />
+                          <span id="quoteImage" class="sr-only"
+                            >Quote Image</span
+                          >
                           <div
                             class="mt-0 max-md:max-w-full text-sm lg:text-xl"
                           >
@@ -531,9 +565,12 @@ import "../styles/global.css";
                     class="absolute w-[114px] right-0 bottom-12 hidden lg:block"
                     aria-labelledby="missionImageBottom"
                   />
-                  <h4 class="mt-10 text-xl lg:text-3xl text-lime-500 w-full">
+                  <span id="missionImageBottom" class="sr-only"
+                    >Mission Image Bottom</span
+                  >
+                  <h3 class="mt-10 text-xl lg:text-3xl text-lime-500 w-full">
                     Telle est la mission Gaïact.
-                  </h4>
+                  </h3>
                 </div>
               </div>
             </div>
@@ -541,6 +578,9 @@ import "../styles/global.css";
               class="main-component overflow-hidden flex flex-col bg-[#102d2e]"
               aria-labelledby="gaiactBusinessEcoHeader"
             >
+              <h2 id="gaiactBusinessEcoHeader" class="sr-only">
+                Gaïact Business Eco
+              </h2>
               <div
                 class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-16 xl:py-40"
               >
@@ -609,6 +649,9 @@ import "../styles/global.css";
                 class="main-component flex flex-col bg-[#255A60]"
                 aria-labelledby="statsGaiactSectionTitle"
               >
+                <h2 id="statsGaiactSectionTitle" class="sr-only">
+                  Statistiques sur la responsabilité sociale des entreprises
+                </h2>
                 <div
                   class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-6"
                 >
@@ -620,15 +663,12 @@ import "../styles/global.css";
                       aria-labelledby="statBlock1"
                     >
                       <h2
+                        id="statBlock1"
                         class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]"
-                        aria-level="4"
                       >
                         88%
                       </h2>
-                      <p
-                        class="text-sm lg:text-xl"
-                        aria-describedby="statDescription1"
-                      >
+                      <p id="statDescription1" class="text-sm lg:text-xl">
                         des consommateurs souhaitent que les entreprises
                         s&#x27;engagent pour des causes sociales et
                         environnementales (Cone Communications, 2017).
@@ -637,20 +677,18 @@ import "../styles/global.css";
                         class="lg:h-14 lg:w-[1px] h-[1px] w-14 bg-white absolute bottom-0 lg:top-1/2 lg:right-0 transform lg:-translate-y-1/2 lg:-translate-x-1/2"
                         aria-hidden="true"></span>
                     </div>
+
                     <div
                       class="flex items-center justify-center lg:justify-start gap-6 text-white pb-8 last:pb-0 lg:pb-0 md:px-5 lg:px-10 relative"
                       aria-labelledby="statBlock2"
                     >
                       <h2
+                        id="statBlock2"
                         class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]"
-                        aria-level="4"
                       >
                         66%
                       </h2>
-                      <p
-                        class="text-sm lg:text-xl"
-                        aria-describedby="statDescription2"
-                      >
+                      <p id="statDescription2" class="text-sm lg:text-xl">
                         des consommateurs sont prêts à payer plus pour des
                         produits et services provenant d&#x27;entreprises
                         engagées dans le développement durable (Nielsen, 2015).
@@ -659,20 +697,18 @@ import "../styles/global.css";
                         class="lg:h-14 lg:w-[1px] h-[1px] w-14 bg-white absolute bottom-0 lg:top-1/2 lg:right-0 transform lg:-translate-y-1/2 lg:-translate-x-1/2"
                         aria-hidden="true"></span>
                     </div>
+
                     <div
                       class="flex items-center justify-center lg:justify-start gap-6 text-white pb-8 last:pb-0 lg:pb-0 md:px-5 lg:px-10 relative"
                       aria-labelledby="statBlock3"
                     >
                       <h2
+                        id="statBlock3"
                         class="text-[40px] lg:text-[62px] font-bold min-w-[90px] lg:min-w-[140px]"
-                        aria-level="4"
                       >
                         76%
                       </h2>
-                      <p
-                        class="text-sm lg:text-xl"
-                        aria-describedby="statDescription3"
-                      >
+                      <p id="statDescription3" class="text-sm lg:text-xl">
                         des milléniaux considèrent la responsabilité sociale et
                         environnementale d&#x27;une entreprise comme un facteur
                         déterminant dans leur choix d&#x27;emploi (Cone
@@ -681,14 +717,15 @@ import "../styles/global.css";
                     </div>
                   </div>
                 </div>
+
                 <section
                   class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
                   aria-labelledby="transitionGoalsTitle"
                 >
-                  <div
-                    class="max-md:max-w-full py-16"
-                    aria-labelledby="transitionGoalsTitle"
-                  >
+                  <h2 id="transitionGoalsTitle" class="sr-only">
+                    Objectifs de transition sociale et environnementale
+                  </h2>
+                  <div class="max-md:max-w-full py-16">
                     <div
                       class="2xl:max-w-[1280px] container mx-auto text-center flex flex-col items-center"
                     >
@@ -701,7 +738,6 @@ import "../styles/global.css";
                       />
                       <div
                         class="mt-16 max-md:mt-10 w-full px-4 sm:px-5 md:px-0"
-                        aria-label="Transition Goals Title"
                       >
                         <h2
                           class="text-center text-2xl lg:text-[44px] lg:leading-[60px] w-full font-bold"
@@ -730,8 +766,10 @@ import "../styles/global.css";
                           href="https://www.helloasso.com/associations/gaiact"
                           target="_blank"
                           class="inline-flex overflow-hidden px-12 py-2.5 mt-0 font-bold leading-snug whitespace-nowrap bg-lime-500 rounded-3xl text-[#042f2e] mx-auto max-md:mt-0"
-                          aria-label="Participate Button">Participer</a
+                          aria-label="Participate Button"
                         >
+                          Participer
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -820,7 +858,10 @@ import "../styles/global.css";
                         role="navigation"
                         aria-labelledby="footerGaiactLeftLinksTitle"
                       >
-                        <h3 class="sr-only">Liens</h3>
+                        <!-- Add a visible or screen-reader-only title -->
+                        <h3 id="footerGaiactLeftLinksTitle" class="sr-only">
+                          Liens
+                        </h3>
                         <a
                           href="/"
                           class="first:mt-0"
@@ -846,12 +887,16 @@ import "../styles/global.css";
                           aria-label="Mentions légales">Mentions légales</a
                         >
                       </div>
+
                       <div
                         class="flex flex-1 flex-col overflow-hidden z-30"
                         role="navigation"
                         aria-labelledby="footerGaiactRightLinksTitle"
                       >
-                        <h3 class="sr-only">Liens</h3>
+                        <!-- Add a screen-reader-only title -->
+                        <h3 id="footerGaiactRightLinksTitle" class="sr-only">
+                          Liens
+                        </h3>
                         <a
                           href="/events"
                           class="first:mt-0"
@@ -886,6 +931,10 @@ import "../styles/global.css";
                         class="mt-6 flex w-full flex-col items-end rounded-none text-sm leading-loose"
                         aria-labelledby="footerGaiactNewsletterTitle"
                       >
+                        <!-- Add a heading or label for the newsletter -->
+                        <h3 id="footerGaiactNewsletterTitle" class="sr-only">
+                          Inscription à la newsletter
+                        </h3>
                         <div
                           class="flex w-full items-center justify-end rounded-lg bg-[#2d4e25] align-middle pl-3"
                         >

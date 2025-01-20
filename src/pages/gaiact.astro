@@ -73,7 +73,7 @@ import "../styles/global.css";
         });
       })();
     </script>
-        <script>
+    <script>
       // Function to toggle the navigation menu
       function toggleSidebar() {
         // Get the nav tag and toggle button
@@ -170,7 +170,6 @@ import "../styles/global.css";
                 class="nav-header bg-[#102d2e] my-auto hidden items-center gap-8 overflow-hidden whitespace-nowrap text-base leading-none text-white lg:flex w-full lg:w-auto"
                 aria-label="Main navigation menu"
               >
-                
                 <a
                   href="/events"
                   class="my-auto self-stretch hover:text-lime-500 lg:w-auto block lg:inline-block py-4 lg:py-0"
@@ -198,8 +197,7 @@ import "../styles/global.css";
                 <a
                   href="/contact"
                   class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition w-full lg:w-auto"
-                  aria-label="Join us to be part of Gaiact"
-                  >Nous rejoindre</a
+                  aria-label="Join us to be part of Gaiact">Nous rejoindre</a
                 >
                 <a
                   href="/become-a-member"
@@ -280,7 +278,6 @@ import "../styles/global.css";
         </div>
         <section
           class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
-          aria-labelledby="gaiactAboutUsTitle"
         >
           <div
             class="flex flex-col px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-12 gap-20"
@@ -296,6 +293,7 @@ import "../styles/global.css";
                 aria-label="Who We Are Section"
               >
                 <h3
+                  id="whoWeAreTitle"
                   class="font-bold lg:text-left text-center lg:text-[40px] lg:leading-[55px] text-[28px] leading-normal"
                   aria-level="3"
                 >
@@ -322,6 +320,7 @@ import "../styles/global.css";
                 aria-label="Board Members Section"
               >
                 <h3
+                  id="boardMembersTitle"
                   class="font-bold lg:text-[40px] lg:leading-[55px] text-center lg:text-left mb-14 lg:mb-0"
                   aria-level="3"
                 >
@@ -330,10 +329,7 @@ import "../styles/global.css";
                 <div
                   class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:max-w-[900px] mx-auto"
                 >
-                  <div
-                    class="flex flex-col gap-8 w-full lg:max-w-[270px]"
-                    aria-labelledby="memberName0"
-                  >
+                  <div class="flex flex-col gap-8 w-full lg:max-w-[270px]">
                     <Image
                       alt="OCÉANE CHABARDES Profile Image"
                       src={imgimages_gaiact_about_us_person_1_webp}
@@ -373,10 +369,7 @@ import "../styles/global.css";
                       </a>
                     </div>
                   </div>
-                  <div
-                    class="flex flex-col gap-8 w-full lg:max-w-[270px]"
-                    aria-labelledby="memberName1"
-                  >
+                  <div class="flex flex-col gap-8 w-full lg:max-w-[270px]">
                     <Image
                       alt="SIMON CARDON Profile Image"
                       src={imgimages_gaiact_about_us_person_2_webp}
@@ -417,10 +410,7 @@ import "../styles/global.css";
                       </a>
                     </div>
                   </div>
-                  <div
-                    class="flex flex-col gap-8 w-full lg:max-w-[270px]"
-                    aria-labelledby="memberName2"
-                  >
+                  <div class="flex flex-col gap-8 w-full lg:max-w-[270px]">
                     <Image
                       alt="CHARLOTTE MADER Profile Image"
                       src={imgimages_gaiact_about_us_person_3_webp}
@@ -509,10 +499,7 @@ import "../styles/global.css";
               aria-label="Mission and Vision Section"
             >
               <div class="2xl:max-w-screen-lg mx-auto">
-                <div
-                  class="flex flex-col lg:flex-row gap-6"
-                  aria-labelledby="missionVisionTitle"
-                >
+                <div class="flex flex-col lg:flex-row gap-6">
                   <div
                     class="lg:w-1/2 rounded-2xl overflow-hidden px-6 bg-[#1e3d40]"
                   >
@@ -751,8 +738,7 @@ import "../styles/global.css";
                   <a
                     href="/contact"
                     class="inline-flex px-12 py-3 justify-center rounded-2xl text-gray-900 bg-lime-500 mx-auto font-semibold mt-8 lg:mt-4 lg:w-auto w-[75%]"
-                    aria-label="Call to action button to join"
-                    >Nous rejoindre</a
+                    aria-label="Call to action button to join">Nous rejoindre</a
                   >
                 </div>
               </div>
@@ -839,7 +825,10 @@ import "../styles/global.css";
                         role="navigation"
                         aria-labelledby="footerGaiactLeftLinksTitle"
                       >
-                        <h3 class="sr-only">Liens</h3>
+                        <!-- Add a visible or screen-reader-only title -->
+                        <h3 id="footerGaiactLeftLinksTitle" class="sr-only">
+                          Liens
+                        </h3>
                         <a
                           href="/"
                           class="first:mt-0"
@@ -865,12 +854,16 @@ import "../styles/global.css";
                           aria-label="Mentions légales">Mentions légales</a
                         >
                       </div>
+
                       <div
                         class="flex flex-1 flex-col overflow-hidden z-30"
                         role="navigation"
                         aria-labelledby="footerGaiactRightLinksTitle"
                       >
-                        <h3 class="sr-only">Liens</h3>
+                        <!-- Add a screen-reader-only title -->
+                        <h3 id="footerGaiactRightLinksTitle" class="sr-only">
+                          Liens
+                        </h3>
                         <a
                           href="/events"
                           class="first:mt-0"
@@ -905,6 +898,10 @@ import "../styles/global.css";
                         class="mt-6 flex w-full flex-col items-end rounded-none text-sm leading-loose"
                         aria-labelledby="footerGaiactNewsletterTitle"
                       >
+                        <!-- Add a heading or label for the newsletter -->
+                        <h3 id="footerGaiactNewsletterTitle" class="sr-only">
+                          Inscription à la newsletter
+                        </h3>
                         <div
                           class="flex w-full items-center justify-end rounded-lg bg-[#2d4e25] align-middle pl-3"
                         >

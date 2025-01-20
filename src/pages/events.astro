@@ -62,7 +62,7 @@ import "../styles/global.css";
         });
       })();
     </script>
-        <script>
+    <script>
       // Function to toggle the navigation menu
       function toggleSidebar() {
         // Get the nav tag and toggle button
@@ -159,7 +159,6 @@ import "../styles/global.css";
                 class="nav-header bg-[#102d2e] my-auto hidden items-center gap-8 overflow-hidden whitespace-nowrap text-base leading-none text-white lg:flex w-full lg:w-auto"
                 aria-label="Main navigation menu"
               >
-                
                 <a
                   href="/events"
                   class="my-auto self-stretch hover:text-lime-500 lg:w-auto block lg:inline-block py-4 lg:py-0"
@@ -187,8 +186,7 @@ import "../styles/global.css";
                 <a
                   href="/contact"
                   class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-lime-400 transition w-full lg:w-auto"
-                  aria-label="Join us to be part of Gaiact"
-                  >Nous rejoindre</a
+                  aria-label="Join us to be part of Gaiact">Nous rejoindre</a
                 >
                 <a
                   href="/become-a-member"
@@ -209,14 +207,21 @@ import "../styles/global.css";
         class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
         aria-label="Gaiact Meetups Section"
       >
-        <div
-          class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10"
-          aria-labelledby="meetupsTitle"
-        >
+        <div class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10">
           <div class="2xl:max-w-[1280px] container mx-auto">
             <div class="w-full max-md:max-w-full flex flex-col gap-10">
-              <h1 class="font-bold text-center text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]">Des rencontres professionnelles pour booster votre business</h1>
-              <p class="text-lg lg:text-xl text-center lg:text-left">Participez à nos événements exclusifs pour rencontrer des professionnels engagés, échanger des idées et développer des partenariats durables. Conférences, ateliers, tables rondes et rencontres informelles : autant d'opportunités pour renforcer votre réseau d'affaires et votre impact écologique et social.</p>
+              <h1
+                class="font-bold text-center text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]"
+              >
+                Des rencontres professionnelles pour booster votre business
+              </h1>
+              <p class="text-lg lg:text-xl text-center lg:text-left">
+                Participez à nos événements exclusifs pour rencontrer des
+                professionnels engagés, échanger des idées et développer des
+                partenariats durables. Conférences, ateliers, tables rondes et
+                rencontres informelles : autant d'opportunités pour renforcer
+                votre réseau d'affaires et votre impact écologique et social.
+              </p>
               <div class="flex gap-5 max-md:flex-col">
                 <div
                   class="flex flex-col w-3/5 max-md:ml-0 max-md:w-full gap-8"
@@ -225,10 +230,10 @@ import "../styles/global.css";
                     class="flex flex-col lg:mt-2.5 w-full text-xl text-white"
                     aria-level="1"
                   >
-                  <span
-                  class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]"
-                  >Les Apéros réseautage Gaïact</span
-                >
+                    <span
+                      class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]"
+                      >Les Apéros réseautage Gaïact</span
+                    >
                   </div>
                   <div
                     class="lg:mt-9 lg:mr-12 lg:leading-10 leading-snug w-full lg:text-left text-center"
@@ -290,12 +295,12 @@ import "../styles/global.css";
                   class="flex flex-col lg:ml-5 w-full md:w-1/2 lg:w-3/5 ml-0 gap-8"
                 >
                   <div class="flex flex-col w-full text-xl">
-                    <h3
+                    <h2
                       class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]"
                       aria-level="2"
                     >
                       Les Webinaires des solutions Gaïact
-                    </h3>
+                    </h2>
                   </div>
                   <div
                     class="lg:mt-10 lg:mr-14 lg:leading-10 leading-snug text-white lg:text-left text-center"
@@ -307,8 +312,7 @@ import "../styles/global.css";
                     href="https://www.helloasso.com/associations/gaiact"
                     target="_blank"
                     class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-lime-500 rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto"
-                    aria-label="Register for Webinar"
-                    >S'inscrire au webinaire</a
+                    aria-label="Register for Webinar">S'inscrire au webinaire</a
                   >
                 </div>
               </div>
@@ -337,7 +341,6 @@ import "../styles/global.css";
         </div>
         <section
           class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
-          aria-labelledby="eventSummaryTitle"
         >
           <div
             class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10"
@@ -545,7 +548,10 @@ import "../styles/global.css";
                         role="navigation"
                         aria-labelledby="footerGaiactLeftLinksTitle"
                       >
-                        <h3 class="sr-only">Liens</h3>
+                        <!-- Add a visible or screen-reader-only title -->
+                        <h3 id="footerGaiactLeftLinksTitle" class="sr-only">
+                          Liens
+                        </h3>
                         <a
                           href="/"
                           class="first:mt-0"
@@ -571,12 +577,16 @@ import "../styles/global.css";
                           aria-label="Mentions légales">Mentions légales</a
                         >
                       </div>
+
                       <div
                         class="flex flex-1 flex-col overflow-hidden z-30"
                         role="navigation"
                         aria-labelledby="footerGaiactRightLinksTitle"
                       >
-                        <h3 class="sr-only">Liens</h3>
+                        <!-- Add a screen-reader-only title -->
+                        <h3 id="footerGaiactRightLinksTitle" class="sr-only">
+                          Liens
+                        </h3>
                         <a
                           href="/events"
                           class="first:mt-0"
@@ -611,6 +621,10 @@ import "../styles/global.css";
                         class="mt-6 flex w-full flex-col items-end rounded-none text-sm leading-loose"
                         aria-labelledby="footerGaiactNewsletterTitle"
                       >
+                        <!-- Add a heading or label for the newsletter -->
+                        <h3 id="footerGaiactNewsletterTitle" class="sr-only">
+                          Inscription à la newsletter
+                        </h3>
                         <div
                           class="flex w-full items-center justify-end rounded-lg bg-[#2d4e25] align-middle pl-3"
                         >
