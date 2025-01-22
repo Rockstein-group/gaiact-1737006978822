@@ -3,8 +3,12 @@ import Seo from "../components/Seo.astro";
 import { Image } from "astro:assets";
 import imgimages_gaiact_logo_svg from "../../public/images/gaiact_logo.svg";
 import imgimages_gaiact_leaft_icon_webp from "../../public/images/gaiact_leaft_icon.webp";
-import imgimages_gaiact_left_leaft_svg from "../../public/images/gaiact_member_left_leaf.svg";
-import imgimages_gaiact_right_leaft_svg from "../../public/images/gaiact_member_right_leaf.svg";
+import imgimages_gaiact_business_meetup_img_webp from "../../public/images/gaiact_business_meetup_img.webp";
+import imgimages_gaiact_mission_cloud_deco_webp from "../../public/images/gaiact_mission_cloud_deco.webp";
+import imgimages_gaiact_mission_cloud_deco_bottom_webp from "../../public/images/gaiact_mission_cloud_deco_bottom.webp";
+import imgimages_gaiact_windmill_icon_webp from "../../public/images/gaiact_windmill_icon.webp";
+import imgimages_gaiact_event_summary_blog_webp from "../../public/images/gaiact_event_summary_blog.webp";
+import imgimages_chevron_right_dark_webp from "../../public/images/chevron-right-dark.webp";
 import imgimages_gaiact_instagram_icon_svg from "../../public/images/gaiact_instagram_icon.svg";
 import imgimages_gaiact_linkedin_icon_svg from "../../public/images/gaiact_linkedin_icon.svg";
 import imgimages_gaiact_send_icon_webp from "../../public/images/gaiact_send_icon.webp";
@@ -83,10 +87,10 @@ import "../styles/global.css";
     </script>
     <Seo
       seo={{
-        title: "Devenir membre - Gaïact",
+        title: "Événements - Gaïact",
         description:
-          "Devenir membre de Gaïact, c'est bénéficier d'avantages pour booster votre transition environnementale.",
-        keywords: "Devenir membre, éthique, économie cirulaire",
+          "Participez à nos événements pour rencontrer des professionnels engagés, échanger des idées et développer des partenariats durables. Conférences, ateliers, et rencontres : renforcez votre réseau et votre impact.",
+        keywords: "rencontre professionnel, partenariat durable",
         canonical: "https://gaiact.org/",
         image: "https://gaiact.org/images/gaiact_logo.svg",
         type: "Website",
@@ -101,7 +105,7 @@ import "../styles/global.css";
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Devenir membre - Gaïact</title>
+    <title>Événements - Gaïact</title>
   </head>
   <body>
     <header
@@ -156,7 +160,7 @@ import "../styles/global.css";
                 aria-label="Main navigation menu"
               >
                 <a
-                  href="/events"
+                  href="/evenement"
                   class="my-auto self-stretch hover:text-[#AFCA0C] lg:w-auto block lg:inline-block py-4 lg:py-0"
                   aria-label="Navigate to Évènements">Évènements</a
                 >
@@ -200,137 +204,270 @@ import "../styles/global.css";
       class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-['Main'] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] main-section"
     >
       <section
-        class="main-component flex flex-col bg-[#102d2e] relative"
-        aria-label="Gaiact Membership Section"
+        class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
+        aria-label="Gaiact Meetups Section"
       >
-        <div class="absolute bottom-[10%] lg:bottom-[5%] left-0">
-          <Image
-            alt="Left leaft"
-            src={imgimages_gaiact_left_leaft_svg}
-            width="180"
-            height="145"
-            class="lg:min-w-[180px] max-w-[145px] pointer-events-none"
-          />
-        </div>
-        <div class="absolute top-[21%] lg:top-[8%] right-0">
-          <Image
-            alt="Right leaft"
-            src={imgimages_gaiact_right_leaft_svg}
-            width="180"
-            height="165"
-            class="lg:min-w-[180px] lg:max-w-[165px] max-w-[90px] pointer-events-none"
-          />
-        </div>
-        <div
-          class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-16 text-white"
-          aria-labelledby="gaiactMembershipTitle"
-        >
-          <div class="xl:max-w-[1140px] container mx-auto flex flex-col gap-12">
-            <h1
-              class="lg:text-[50px] lg:leading-[60px] text-[28px] leading-[32px] font-bold text-center"
-              aria-level="1"
-            >
-              Devenez membre du réseau Gaïact
-            </h1>
-            <div class="lg:text-xl text-sm flex flex-col gap-12">
-              <p aria-label="Membership Description 1">
-                Rejoignez notre réseau d&#x27;affaires éco-responsable et
-                bénéficiez d&#x27;opportunités exclusives pour développer votre
-                entreprise, élargir votre réseau et renforcer votre engagement
-                en faveur du développement durable.
-              </p>
-              <p aria-label="Membership Description 2">
-                Ensemble, créons un avenir plus vertueux et plus responsable.
-              </p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div
-                class="rounded-2xl lg:rounded-[32px] px-5 bg-[#1e3d40]"
-                aria-labelledby="membershipTitle-0"
+        <div class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10 md:py-16 lg:pt-20 lg:pb-36">
+          <div class="2xl:max-w-[1280px] container mx-auto flex flex-col gap-6 md:gap-10 lg:gap-36">
+            <div class="w-full max-md:max-w-full flex flex-col gap-10 md:gap-16">
+              <h1
+                class="font-bold text-center text-white text-[28px] leading-snug lg:text-[50px] lg:leading-[65px]"
               >
-                <div class="py-5 border-b border-[#AFCA0C]">
+                Des rencontres professionnelles pour booster votre business
+              </h1>
+              <p class="text-lg lg:text-xl text-center lg:text-left">
+                Participez à nos événements exclusifs pour rencontrer des
+                professionnels engagés, échanger des idées et développer des
+                partenariats durables. Conférences, ateliers, tables rondes et
+                rencontres informelles : autant d'opportunités pour renforcer
+                votre réseau d'affaires et votre impact écologique et social.
+              </p>
+              <div class="flex gap-10 max-md:flex-col">
+                <div
+                  class="flex flex-col w-3/5 max-md:ml-0 max-md:w-full gap-8"
+                >
                   <div
-                    class="text-[#AFCA0C] font-bold lg:text-2xl text-base lg:text-left text-center"
+                    class="flex flex-col lg:mt-2.5 w-full text-xl text-white"
+                    aria-level="1"
                   >
-                    Nos événements mensuels en tarif réduit
+                    <span
+                      class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]"
+                      >Les Apéros réseautage Gaïact</span
+                    >
                   </div>
-                </div>
-                <div class="py-12 flex flex-col gap-2">
-                  <div class="flex items-center text-white gap-2">
+                  <div
+                    class="lg:mt-9 lg:mr-12 lg:leading-10 leading-snug w-full lg:text-left text-center"
+                    aria-label="Meetups Description"
+                  >
+                    C'est tous les 3e jeudi du mois de 18h30 à 21h (cf
+                    Calendrier) : du réseautage, une conférence avec un
+                    tryptique d'intervenant transectoriels et un buffet
+                    convivial. Les soirées sont suivies d'un after festif dans
+                    un bar partenaire.
+                  </div>
+                  <div class="flex gap-3.5 items-center text-lg leading-none">
                     <Image
                       alt="Leaf Icon"
                       src={imgimages_gaiact_leaft_icon_webp}
                       width="400"
                       height="300"
-                      class="min-w-[28px] max-w-[28px]"
+                      class="shrink-0 w-[29px]"
                     />
-                    <p class="lg:text-xl text-sm">
-                      Les Soirées Immersion Gaïact en présentiel
+                    <p class="lg:w-[677px] w-full">
+                      <span class="font-bold">Tarif extérieur :</span>
+                      <span class="text-gray-400"
+                        >10 € / Gratuit pour les membres + participation au
+                        buffet</span
+                      >
                     </p>
                   </div>
-                  <div class="flex items-center text-white gap-2">
-                    <Image
-                      alt="Leaf Icon"
-                      src={imgimages_gaiact_leaft_icon_webp}
-                      width="400"
-                      height="300"
-                      class="min-w-[28px] max-w-[28px]"
-                    />
-                    <p class="lg:text-xl text-sm">Les Webinaires Inspiration</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="rounded-2xl lg:rounded-[32px] px-5 bg-[#1e3d40]"
-                aria-labelledby="membershipTitle-1"
-              >
-                <div class="py-5 border-b border-[#AFCA0C]">
-                  <div
-                    class="text-[#AFCA0C] font-bold lg:text-2xl text-base lg:text-left text-center"
+                  <a
+                    href="https://www.helloasso.com/associations/gaiact"
+                    target="_blank"
+                    class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-[#AFCA0C] rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto text-center"
+                    aria-label="Register for Immersion Evening"
+                    >S'inscrire à une soirée immersion</a
                   >
-                    Nos événements mensuels en tarif réduit
-                  </div>
                 </div>
-                <div class="py-12 flex flex-col gap-2">
-                  <div class="flex items-center text-white gap-2">
-                    <Image
-                      alt="Leaf Icon"
-                      src={imgimages_gaiact_leaft_icon_webp}
-                      width="400"
-                      height="300"
-                      class="min-w-[28px] max-w-[28px]"
-                    />
-                    <p class="lg:text-xl text-sm">Notre outil collaboratif</p>
-                  </div>
-                  <div class="flex items-center text-white gap-2">
-                    <Image
-                      alt="Leaf Icon"
-                      src={imgimages_gaiact_leaft_icon_webp}
-                      width="400"
-                      height="300"
-                      class="min-w-[28px] max-w-[28px]"
-                    />
-                    <p class="lg:text-xl text-sm">Notre boite à outils</p>
-                  </div>
+                <div class="flex flex-col lg:ml-5 lg:w-2/5 w-full gap-8">
+                  <Image
+                    alt="Gaiact Business Meetup"
+                    src={imgimages_gaiact_business_meetup_img_webp}
+                    width="400"
+                    height="300"
+                    class="w-full rounded-3xl"
+                  />
                 </div>
               </div>
             </div>
-            <div
-              class="text-center flex items-center flex-col lg:flex-row justify-center gap-3 mt-5 px-6 lg:px-0 relative z-50"
-            >
-              <button
-                class="inline-flex font-semibold h-10 justify-center px-6 bg-[#AFCA0C] text-teal-950 text-center py-2 border border-[#AFCA0C] rounded-xl transition-all w-full lg:w-auto"
-                aria-label="Discover Gaïact Charter"
-                >Découvrir la charte Gaïact</button
-              >
-              <a
-                href="/contact"
-                class="inline-flex font-semibold h-10 justify-center px-6 hover:bg-opacity-100 hover:text-[#102d2e] hover:bg-[#AFCA0C] text-[#AFCA0C] text-center py-2 border border-[#AFCA0C] rounded-xl transition-all w-full lg:w-auto bg-[#102d2e]"
-                aria-label="Join the Network">Rejoindre le réseau</a
-              >
+            <div class="lw-full 2xl:max-w-[1244px] mt-6 max-w-full">
+              <div class="flex gap-10 md:flex-row flex-col-reverse">
+                <div class="flex flex-col w-full md:w-1/2 lg:w-2/5 max-md:ml-0">
+                  <Image
+                    alt="Gaiact Business Meetup"
+                    src={imgimages_gaiact_business_meetup_img_webp}
+                    width="400"
+                    height="300"
+                    class="w-full rounded-3xl"
+                  />
+                </div>
+                <div
+                  class="flex flex-col lg:ml-5 w-full md:w-1/2 lg:w-3/5 ml-0 gap-8"
+                >
+                  <div class="flex flex-col w-full text-xl">
+                    <h2
+                      class="font-bold text-center lg:text-left text-white text-[28px] leading-snug lg:text-[44px] lg:leading-[51px]"
+                      aria-level="2"
+                    >
+                      Les Webinaires des solutions Gaïact
+                    </h2>
+                  </div>
+                  <div
+                    class="lg:mt-10 lg:mr-14 lg:leading-10 leading-snug text-white lg:text-left text-center"
+                  >
+                    Un mardi par mois, de 12h à 13h, en visioconférence
+                    thématique, avec un intervenant ayant une solution concrète.
+                  </div>
+                  <a
+                    href="https://www.helloasso.com/associations/gaiact"
+                    target="_blank"
+                    class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-[#AFCA0C] rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto text-center"
+                    aria-label="Register for Webinar">S'inscrire au webinaire</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div
+          class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10 bg-[#255A60]"
+        >
+          <div
+            class="2xl:max-w-[1280px] container mx-auto flex flex-col gap-4 lg:gap-10"
+          >
+            <p
+              class="text-center text-white lg:text-xl"
+              aria-label="Upcoming Events Announcement"
+            >
+              Ne manquez pas nos prochains événements !
+            </p>
+            <a
+              href="https://www.helloasso.com/associations/gaiact"
+              target="_blank"
+              class="inline-flex justify-center overflow-hidden px-12 py-2.5 font-bold leading-snug whitespace-nowrap bg-[#AFCA0C] rounded-3xl text-teal-950 mx-auto md:w-auto w-[85%]"
+              aria-label="Discover Upcoming Events">Découvrir</a
+            >
+          </div>
+        </div>
+        <section
+          class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
+        >
+          <div
+            class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10 md:py-16 lg:pt-36 lg:pb-24"
+            aria-label="Event Summary Wrapper"
+          >
+            <div
+              class="2xl:max-w-[1280px] container mx-auto"
+              aria-label="Event Summary Container"
+            >
+              <div
+                class="flex gap-10 max-md:flex-col"
+                aria-label="Event Summary Content Container"
+              >
+                <div
+                  class="flex flex-col w-full 2xl:w-[1192px] relative mx-auto"
+                  aria-label="Image Container"
+                >
+                  <Image
+                    alt="Mission cloud decoration"
+                    src={imgimages_gaiact_mission_cloud_deco_webp}
+                    width="400"
+                    height="300"
+                    class="ml-[25%] lg:ml-56 max-w-full w-[110px] lg:w-[230px]"
+                  />
+                  <!-- -->
+                  <Image
+                    alt="Mission cloud decoration bottom"
+                    src={imgimages_gaiact_mission_cloud_deco_bottom_webp}
+                    width="400"
+                    height="300"
+                    class="max-w-full w-[70px] lg:w-[114px] absolute right-0 lg:right-[10%] top-[50%]"
+                  />
+                  <!-- -->
+                  <Image
+                    alt="Mission cloud decoration bottom duplicate"
+                    src={imgimages_gaiact_mission_cloud_deco_bottom_webp}
+                    width="400"
+                    height="300"
+                    class="max-w-full w-[70px] lg:w-[114px]"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-start text-5xl text-white max-md:max-w-full mb-6 lg:mb-12"
+                aria-label="Event Title Container"
+              >
+                <h3
+                  class="lg:mt-7 mt-0 w-full font-bold lg:text-[44px] text-[28px] lg:leading-[55px] leading-snug text-left lg:text-center"
+                >
+                  Retour sur notre dernier évènement
+                </h3>
+              </div>
+              <div
+                class="w-full 2xl:w-[1192px] mx-auto relative"
+                aria-label="Articles Container"
+              >
+                <Image
+                  alt="Windmill icon"
+                  src={imgimages_gaiact_windmill_icon_webp}
+                  width="400"
+                  height="300"
+                  class="lg:w-[88px] w-[40px] right-4 -top-[100px] md:-top-[60px] max-md:mt-10 absolute lg:right-0 lg:-top-[130px]"
+                />
+                <article
+                  class="max-w-full overflow-hidden rounded-3xl bg-[#245a60] p-6"
+                  aria-label="Article 1"
+                >
+                  <div
+                    class="max-md:flex-col flex gap-5"
+                    aria-label="Article Content 1"
+                  >
+                    <div
+                      class="max-md:ml-0 max-md:w-full flex flex-col"
+                      aria-label="Article Image Container 1"
+                    >
+                      <Image
+                        alt="Image for article 1"
+                        src={imgimages_gaiact_event_summary_blog_webp}
+                        width="400"
+                        height="300"
+                        class="h-[211px] aspect-video shrink-0 rounded-2xl object-cover"
+                      />
+                    </div>
+                    <div
+                      class="max-md:ml-0 max-md:w-full ml-5 flex w-[71%] flex-col"
+                      aria-label="Article Text Container 1"
+                    >
+                      <h2
+                        class="self-start text-xl font-bold lg:leading-none leading-snug text-white lg:block hidden"
+                        aria-label="Article Title 1"
+                      >
+                        Un avant-goût immersif dans le réseau Gaïact
+                      </h2>
+                      <p
+                        class="max-md:max-w-full text-base leading-6 text-white"
+                        aria-label="Article Content 1"
+                      >
+                        Il est 18h30 quand Charlotte Mader lance son
+                        brise-glace. « Quelle principale action écologique
+                        avez-vous mis en place dans votre entreprise ? »,
+                        lance-t-elle à l'assemblée. La toute première soirée du
+                        réseau Gaïact est lancé. Charlotte c'est la secrétaire
+                        du réseau Gaïact qui s'occupe également de l'animation.
+                        À ses côtés se trouvent Simon Cardon, président du
+                        réseau et Océane Chabardès,...
+                      </p>
+                      <a
+                        href="/experience-blog"
+                        class="max-md:px-4 inline-flex justify-center gap-2.5 overflow-hidden rounded-full border border-solid border-[#AFCA0C] bg-[#AFCA0C] text-gray-900 transition-all px-6 py-2.5 text-center max-w-screen-md:mr-auto lg:ml-auto mt-4 lg:w-auto w-1/2"
+                        aria-label="Read article 1"
+                      >
+                        <span aria-label="Read button for article 1">LIRE</span>
+                        <Image
+                          alt="Chevron right icon"
+                          src={imgimages_chevron_right_dark_webp}
+                          width="400"
+                          height="300"
+                          class="w-6 h-6"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
     <footer
@@ -451,7 +588,7 @@ import "../styles/global.css";
                           Liens
                         </h3>
                         <a
-                          href="/events"
+                          href="/evenement"
                           class="first:mt-0"
                           role="link"
                           aria-label="Évènements">Évènements</a
@@ -463,7 +600,7 @@ import "../styles/global.css";
                           aria-label="Média">Média</a
                         >
                         <a
-                          href="/become-a-member"
+                          href="/devenir-membre"
                           class="first:mt-0"
                           role="link"
                           aria-label="Devenir membre">Devenir membre</a
