@@ -11,6 +11,6 @@ export default defineConfig({
     tailwind(),
     robotsTxt(),
     sitemap(),
-    compressor({ gzip: true, brotli: false }),
+    compressor({ gzip: true, brotli: true }),
   ],
 });
