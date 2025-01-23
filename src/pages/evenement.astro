@@ -2,11 +2,11 @@
 import Seo from "../components/Seo.astro";
 import { Image } from "astro:assets";
 import imgimages_gaiact_logo_svg from "../../public/images/gaiact_logo.svg";
-import imgimages_gaiact_leaft_icon_webp from "../../public/images/gaiact_leaft_icon.webp";
+import imgimages_gaiact_leaft_icon_svg from "../../public/images/gaiact_leaft_icon.svg";
 import imgimages_gaiact_business_meetup_img_webp from "../../public/images/gaiact_business_meetup_img.webp";
-import imgimages_gaiact_mission_cloud_deco_webp from "../../public/images/gaiact_mission_cloud_deco.webp";
-import imgimages_gaiact_mission_cloud_deco_bottom_webp from "../../public/images/gaiact_mission_cloud_deco_bottom.webp";
-import imgimages_gaiact_windmill_icon_webp from "../../public/images/gaiact_windmill_icon.webp";
+import imgimages_gaiact_mission_cloud_deco_svg from "../../public/images/gaiact_mission_cloud_deco.svg";
+import imgimages_gaiact_mission_cloud_deco_bottom_svg from "../../public/images/gaiact_mission_cloud_deco_bottom.svg";
+import imgimages_gaiact_windmill_icon_svg from "../../public/images/gaiact_windmill_icon.svg";
 import imgimages_gaiact_event_summary_blog_webp from "../../public/images/gaiact_event_summary_blog.webp";
 import imgimages_chevron_right_dark_webp from "../../public/images/chevron-right-dark.webp";
 import imgimages_gaiact_instagram_icon_svg from "../../public/images/gaiact_instagram_icon.svg";
@@ -117,7 +117,7 @@ import "../styles/global.css";
         aria-label="Header section with Gaiact branding"
       >
         <div class="max-md:px-4 max-md:max-w-full px-4 py-4 sm:px-5 lg:px-8">
-          <div class="mx-auto 2xl:max-w-[1366px]">
+          <div class="mx-auto container">
             <div
               class="header-component flex flex-wrap justify-between gap-5 lg:gap-10 border-b border-teal-950 bg-[#0F2D2E] font-bold"
             >
@@ -188,9 +188,8 @@ import "../styles/global.css";
                   class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl bg-[#AEC90C] px-12 py-2.5 text-teal-950 hover:bg-[#AFCA0C] transition w-full lg:w-auto block lg:inline-block text-center"
                   aria-label="Join us to be part of Gaiact">Nous rejoindre</a
                 >
-               <a
+                <a
                   href="https://connect.gaiactnetwork.org/index.php/login?redirect_url=/index.php/f/30518"
-                  target="_blank"
                   class="max-md:px-4 gap-2.5 self-stretch overflow-hidden rounded-xl border border-solid border-[#AEC90C] bg-[#AEC90C] bg-opacity-0 hover:bg-opacity-100 px-12 py-2.5 text-[#AEC90C] hover:text-teal-950 transition w-full lg:w-auto mt-4 lg:mt-0 xl:min-w-[252.86px] block lg:inline-block text-center"
                   aria-label="Contact us">Se connecter</a
                 >
@@ -207,9 +206,15 @@ import "../styles/global.css";
         class="main-component flex overflow-hidden flex-col text-white bg-[#102d2e]"
         aria-label="Gaiact Meetups Section"
       >
-        <div class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10 md:py-16 lg:pt-20 lg:pb-36">
-          <div class="2xl:max-w-[1280px] container mx-auto flex flex-col gap-6 md:gap-10 lg:gap-36">
-            <div class="w-full max-md:max-w-full flex flex-col gap-10 md:gap-16">
+        <div
+          class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10 md:py-16 lg:pt-20 lg:pb-36"
+        >
+          <div
+            class="container lg:px-10 mx-auto flex flex-col gap-6 md:gap-10 lg:gap-36"
+          >
+            <div
+              class="w-full max-md:max-w-full flex flex-col gap-10 md:gap-16"
+            >
               <h1
                 class="font-bold text-center text-white text-[28px] leading-snug lg:text-[50px] lg:leading-[65px]"
               >
@@ -248,7 +253,7 @@ import "../styles/global.css";
                   <div class="flex gap-3.5 items-center text-lg leading-none">
                     <Image
                       alt="Leaf Icon"
-                      src={imgimages_gaiact_leaft_icon_webp}
+                      src={imgimages_gaiact_leaft_icon_svg}
                       width="400"
                       height="300"
                       class="shrink-0 w-[29px]"
@@ -263,7 +268,6 @@ import "../styles/global.css";
                   </div>
                   <a
                     href="https://www.helloasso.com/associations/gaiact"
-                    target="_blank"
                     class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-[#AFCA0C] rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto text-center"
                     aria-label="Register for Immersion Evening"
                     >S'inscrire à une soirée immersion</a
@@ -310,7 +314,6 @@ import "../styles/global.css";
                   </div>
                   <a
                     href="https://www.helloasso.com/associations/gaiact"
-                    target="_blank"
                     class="overflow-hidden gap-2.5 self-start px-12 py-2.5 font-bold leading-snug bg-[#AFCA0C] rounded-3xl text-teal-950 max-md:px-4 w-full lg:w-auto text-center"
                     aria-label="Register for Webinar">S'inscrire au webinaire</a
                   >
@@ -322,9 +325,7 @@ import "../styles/global.css";
         <div
           class="px-4 sm:px-5 lg:px-8 max-md:px-4 max-md:max-w-full py-10 bg-[#255A60]"
         >
-          <div
-            class="2xl:max-w-[1280px] container mx-auto flex flex-col gap-4 lg:gap-10"
-          >
+          <div class="container lg:px-10 mx-auto flex flex-col gap-4 lg:gap-16">
             <p
               class="text-center text-white lg:text-xl"
               aria-label="Upcoming Events Announcement"
@@ -333,7 +334,6 @@ import "../styles/global.css";
             </p>
             <a
               href="https://www.helloasso.com/associations/gaiact"
-              target="_blank"
               class="inline-flex justify-center overflow-hidden px-12 py-2.5 font-bold leading-snug whitespace-nowrap bg-[#AFCA0C] rounded-3xl text-teal-950 mx-auto md:w-auto w-[85%]"
               aria-label="Discover Upcoming Events">Découvrir</a
             >
@@ -347,7 +347,7 @@ import "../styles/global.css";
             aria-label="Event Summary Wrapper"
           >
             <div
-              class="2xl:max-w-[1280px] container mx-auto"
+              class="container lg:px-10 mx-auto"
               aria-label="Event Summary Container"
             >
               <div
@@ -360,7 +360,7 @@ import "../styles/global.css";
                 >
                   <Image
                     alt="Mission cloud decoration"
-                    src={imgimages_gaiact_mission_cloud_deco_webp}
+                    src={imgimages_gaiact_mission_cloud_deco_svg}
                     width="400"
                     height="300"
                     class="ml-[25%] lg:ml-56 max-w-full w-[110px] lg:w-[230px]"
@@ -368,17 +368,17 @@ import "../styles/global.css";
                   <!-- -->
                   <Image
                     alt="Mission cloud decoration bottom"
-                    src={imgimages_gaiact_mission_cloud_deco_bottom_webp}
-                    width="400"
-                    height="300"
+                    src={imgimages_gaiact_mission_cloud_deco_bottom_svg}
+                    width="70"
+                    height="114"
                     class="max-w-full w-[70px] lg:w-[114px] absolute right-0 lg:right-[10%] top-[50%]"
                   />
                   <!-- -->
                   <Image
                     alt="Mission cloud decoration bottom duplicate"
-                    src={imgimages_gaiact_mission_cloud_deco_bottom_webp}
-                    width="400"
-                    height="300"
+                    src={imgimages_gaiact_mission_cloud_deco_bottom_svg}
+                    width="70"
+                    height="114"
                     class="max-w-full w-[70px] lg:w-[114px]"
                   />
                 </div>
@@ -399,7 +399,7 @@ import "../styles/global.css";
               >
                 <Image
                   alt="Windmill icon"
-                  src={imgimages_gaiact_windmill_icon_webp}
+                  src={imgimages_gaiact_windmill_icon_svg}
                   width="400"
                   height="300"
                   class="lg:w-[88px] w-[40px] right-4 -top-[100px] md:-top-[60px] max-md:mt-10 absolute lg:right-0 lg:-top-[130px]"
@@ -479,7 +479,7 @@ import "../styles/global.css";
         <div
           class="max-md:px-4 max-md:max-w-full px-8 py-8 lg:py-12 md:py-12 sm:px-5 lg:px-8 bg-[#112c29]"
         >
-          <div class="mx-auto 2xl:max-w-[1280px] container">
+          <div class="mx-auto container">
             <div
               class="flex max-w-full flex-col lg:items-center overflow-hidden"
             >
@@ -505,7 +505,6 @@ import "../styles/global.css";
                     >
                       <a
                         href="https://www.linkedin.com/company/reseaugaiact/"
-                        target="_blank"
                         class="rounded-[50%] bg-white text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300"
                         rel="noreferrer"
                         aria-label="LinkedIn"
@@ -521,7 +520,6 @@ import "../styles/global.css";
                       </a>
                       <a
                         href="https://www.instagram.com/reseau_gaiact/"
-                        target="_blank"
                         class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300"
                         rel="noreferrer"
                         aria-label="Instagram"
